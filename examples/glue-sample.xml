@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Domains xmlns="http://schemas.ogf.org/glue/2008/05/spec_2.0_d42_r01"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://schemas.ogf.org/glue/2008/05/spec_2.0_d42_r01 file:/C:/Documents%20and%20Settings/andreozzi/My%20Documents/Activities/GLUE/SVN/trunk/glue-xsd/xsd/GLUE2.xsd" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+  <AdminDomain xmlns="" BaseType="Domain" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+      <ID>http://www.oxygenxml.com/</ID>
+      <Name>Name0</Name>
+      <Description>Description0</Description>
+      <WWW>http://www.oxygenxml.com/</WWW>
+      <OtherInfo>OtherInfo0</OtherInfo>
+      <Distributed>false</Distributed>
+      <Owner>Owner0</Owner>
+      <Extensions>
+        <Extension Key="Key0">Extension0</Extension>
+      </Extensions>
+      <Location CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+        <LocalID>LocalID0</LocalID>
+        <Name>Name1</Name>
+        <Address>Address0</Address>
+        <Place>Place0</Place>
+        <Country>Country0</Country>
+        <PostCode>PostCode0</PostCode>
+        <Latitude>3.14159E0</Latitude>
+        <Longitude>3.14159E0</Longitude>
+        <Extensions>
+          <Extension Key="Key1">Extension1</Extension>
+        </Extensions>
+      </Location>
+      <Contact CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+        <LocalID>LocalID1</LocalID>
+        <URL>http://www.oxygenxml.com/</URL>
+        <Type>Type0</Type>
+        <OtherInfo>OtherInfo1</OtherInfo>
+        <Extensions>
+          <Extension Key="Key2">Extension2</Extension>
+        </Extensions>
+      </Contact>
+      <Services>
+        <Service BaseType="Service" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+            <ID>http://www.oxygenxml.com/</ID>
+            <Name>Name2</Name>
+            <Capability>security.authentication</Capability>
+            <Type>Type1</Type>
+            <QualityLevel>production</QualityLevel>
+            <StatusPage>http://www.oxygenxml.com/</StatusPage>
+            <Complexity>Complexity0</Complexity>
+            <OtherInfo>OtherInfo2</OtherInfo>
+            <Extensions>
+              <Extension Key="Key3">Extension3</Extension>
+            </Extensions>
+            <Location CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+              <LocalID>LocalID2</LocalID>
+              <Name>Name3</Name>
+              <Address>Address1</Address>
+              <Place>Place1</Place>
+              <Country>Country1</Country>
+              <PostCode>PostCode1</PostCode>
+              <Latitude>3.14159E0</Latitude>
+              <Longitude>3.14159E0</Longitude>
+              <Extensions>
+                <Extension Key="Key4">Extension4</Extension>
+              </Extensions>
+            </Location>
+            <Contact CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+              <LocalID>LocalID3</LocalID>
+              <URL>http://www.oxygenxml.com/</URL>
+              <Type>Type2</Type>
+              <OtherInfo>OtherInfo3</OtherInfo>
+              <Extensions>
+                <Extension Key="Key5">Extension5</Extension>
+              </Extensions>
+            </Contact>
+            <Endpoint BaseType="Endpoint" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+                <ID>http://www.oxygenxml.com/</ID>
+                <Name>Name4</Name>
+                <URL>http://www.oxygenxml.com/</URL>
+                <Capability>security.authentication</Capability>
+                <Technology>Technology0</Technology>
+                <Interface>http://www.oxygenxml.com/</Interface>
+                <InterfaceExtension>http://www.oxygenxml.com/</InterfaceExtension>
+                <WSDL>http://www.oxygenxml.com/</WSDL>
+                <SupportedProfile>http://www.oxygenxml.com/</SupportedProfile>
+                <Semantics>http://www.oxygenxml.com/</Semantics>
+                <Implementor>Implementor0</Implementor>
+                <ImplementationName>ImplementationName0</ImplementationName>
+                <ImplementationVersion>ImplementationVersion0</ImplementationVersion>
+                <QualityLevel>production</QualityLevel>
+                <HealthState>ok</HealthState>
+                <HealthStateInfo>HealthStateInfo0</HealthStateInfo>
+                <ServingState>production</ServingState>
+                <StartTime>2006-05-04T18:13:51.0Z</StartTime>
+                <IssuerCA>IssuerCA0</IssuerCA>
+                <TrustedCA>TrustedCA0</TrustedCA>
+                <DowntimeAnnounce>2006-05-04T18:13:51.0Z</DowntimeAnnounce>
+                <DowntimeStart>2006-05-04T18:13:51.0Z</DowntimeStart>
+                <DowntimeEnd>2006-05-04T18:13:51.0Z</DowntimeEnd>
+                <DowntimeInfo>DowntimeInfo0</DowntimeInfo>
+                <Extensions>
+                  <Extension Key="Key6">Extension6</Extension>
+                </Extensions>
+                <AccessPolicy BaseType="Policy" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+                  <LocalID>LocalID4</LocalID>
+                  <Scheme>Scheme0</Scheme>
+                  <Rule>Rule0</Rule>
+                  <Rule>Rule1</Rule>
+                  <Rule>Rule2</Rule>
+                  <Rule>Rule3</Rule>
+                  <Rule>Rule4</Rule>
+                </AccessPolicy>
+                <Associations>
+                  <ActivityID>http://www.oxygenxml.com/</ActivityID>
+                </Associations>
+            </Endpoint>
+            <Activities>
+              <Activity BaseType="Activity" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+                  <ID>http://www.oxygenxml.com/</ID>
+                  <Extensions>
+                    <Extension Key="Key7">Extension7</Extension>
+                  </Extensions>
+                  <Associations>
+                    <EndpointID>http://www.oxygenxml.com/</EndpointID>
+                    <UserDomainID>http://www.oxygenxml.com/</UserDomainID>
+                    <ActivityID>http://www.oxygenxml.com/</ActivityID>
+                  </Associations>
+              </Activity>
+            </Activities>
+            <Associations>
+              <ServiceID>http://www.oxygenxml.com/</ServiceID>
+            </Associations>
+        </Service>
+        <ComputingService BaseType="Service" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+            <ID>http://www.oxygenxml.com/</ID>
+            <Name>Name5</Name>
+            <Capability>security.authentication</Capability>
+            <Type>Type3</Type>
+            <QualityLevel>production</QualityLevel>
+            <StatusPage>http://www.oxygenxml.com/</StatusPage>
+            <Complexity>Complexity1</Complexity>
+            <OtherInfo>OtherInfo4</OtherInfo>
+            <TotalJobs>429496729</TotalJobs>
+            <RunningJobs>429496729</RunningJobs>
+            <WaitingJobs>429496729</WaitingJobs>
+            <StagingJobs>429496729</StagingJobs>
+            <SuspendedJobs>429496729</SuspendedJobs>
+            <PreLRMSWaitingJobs>429496729</PreLRMSWaitingJobs>
+            <Extensions>
+              <Extension Key="Key8">Extension8</Extension>
+            </Extensions>
+            <Location CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+              <LocalID>LocalID5</LocalID>
+              <Name>Name6</Name>
+              <Address>Address2</Address>
+              <Place>Place2</Place>
+              <Country>Country2</Country>
+              <PostCode>PostCode2</PostCode>
+              <Latitude>3.14159E0</Latitude>
+              <Longitude>3.14159E0</Longitude>
+              <Extensions>
+                <Extension Key="Key9">Extension9</Extension>
+              </Extensions>
+            </Location>
+            <Contact CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+              <LocalID>LocalID6</LocalID>
+              <URL>http://www.oxygenxml.com/</URL>
+              <Type>Type4</Type>
+              <OtherInfo>OtherInfo5</OtherInfo>
+              <Extensions>
+                <Extension Key="Key10">Extension10</Extension>
+              </Extensions>
+            </Contact>
+            <ComputingEndpoint BaseType="Endpoint" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+                <ID>http://www.oxygenxml.com/</ID>
+                <Name>Name7</Name>
+                <URL>http://www.oxygenxml.com/</URL>
+                <Capability>security.authentication</Capability>
+                <Technology>Technology1</Technology>
+                <Interface>http://www.oxygenxml.com/</Interface>
+                <InterfaceExtension>http://www.oxygenxml.com/</InterfaceExtension>
+                <WSDL>http://www.oxygenxml.com/</WSDL>
+                <SupportedProfile>http://www.oxygenxml.com/</SupportedProfile>
+                <Semantics>http://www.oxygenxml.com/</Semantics>
+                <Implementor>Implementor1</Implementor>
+                <ImplementationName>ImplementationName1</ImplementationName>
+                <ImplementationVersion>ImplementationVersion1</ImplementationVersion>
+                <QualityLevel>production</QualityLevel>
+                <HealthState>ok</HealthState>
+                <HealthStateInfo>HealthStateInfo1</HealthStateInfo>
+                <ServingState>production</ServingState>
+                <StartTime>2006-05-04T18:13:51.0Z</StartTime>
+                <IssuerCA>IssuerCA1</IssuerCA>
+                <TrustedCA>TrustedCA1</TrustedCA>
+                <DowntimeAnnounce>2006-05-04T18:13:51.0Z</DowntimeAnnounce>
+                <DowntimeStart>2006-05-04T18:13:51.0Z</DowntimeStart>
+                <DowntimeEnd>2006-05-04T18:13:51.0Z</DowntimeEnd>
+                <DowntimeInfo>DowntimeInfo1</DowntimeInfo>
+                <Staging>Staging0</Staging>
+                <JobDescription>JobDescription0</JobDescription>
+                <Extensions>
+                  <Extension Key="Key11">Extension11</Extension>
+                </Extensions>
+                <AccessPolicy BaseType="Policy" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+                  <LocalID>LocalID7</LocalID>
+                  <Scheme>Scheme1</Scheme>
+                  <Rule>Rule5</Rule>
+                  <Rule>Rule6</Rule>
+                  <Rule>Rule7</Rule>
+                  <Rule>Rule8</Rule>
+                  <Rule>Rule9</Rule>
+                </AccessPolicy>
+                <Associations>
+                  <ComputingShareLocalID>ComputingShareLocalID0</ComputingShareLocalID>
+                  <ComputingActivityID>http://www.oxygenxml.com/</ComputingActivityID>
+                </Associations>
+            </ComputingEndpoint>
+            <ComputingShares>
+              <ComputingShare BaseType="Share" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+                  <LocalID>LocalID8</LocalID>
+                  <Name>Name8</Name>
+                  <Description>Description1</Description>
+                  <MappingQueue>MappingQueue0</MappingQueue>
+                  <MaxWallTime>922337203</MaxWallTime>
+                  <MaxTotalWallTime>922337203</MaxTotalWallTime>
+                  <MinWallTime>922337203</MinWallTime>
+                  <DefaultWallTime>922337203</DefaultWallTime>
+                  <MaxCPUTime>922337203</MaxCPUTime>
+                  <MaxTotalCPUTime>922337203</MaxTotalCPUTime>
+                  <MaxCPUsTime>922337203</MaxCPUsTime>
+                  <MinCPUTime>922337203</MinCPUTime>
+                  <DefaultCPUTime>922337203</DefaultCPUTime>
+                  <MaxTotalJobs>429496729</MaxTotalJobs>
+                  <MaxRunningJobs>429496729</MaxRunningJobs>
+                  <MaxWaitingJobs>429496729</MaxWaitingJobs>
+                  <MaxPreLRMSWaitingJobs>429496729</MaxPreLRMSWaitingJobs>
+                  <MaxUserRunningJobs>429496729</MaxUserRunningJobs>
+                  <MaxSlotsPerJob>429496729</MaxSlotsPerJob>
+                  <MaxStateInStreams>429496729</MaxStateInStreams>
+                  <MaxStageOutStreams>429496729</MaxStageOutStreams>
+                  <SchedulingPolicy>SchedulingPolicy0</SchedulingPolicy>
+                  <MaxMemory>922337203</MaxMemory>
+                  <MaxDiskSpace>922337203</MaxDiskSpace>
+                  <DefaultStorageService>http://www.oxygenxml.com/</DefaultStorageService>
+                  <Preemption>false</Preemption>
+                  <ServingState>production</ServingState>
+                  <TotalJobs>429496729</TotalJobs>
+                  <RunningJobs>429496729</RunningJobs>
+                  <LocalRunningJobs>429496729</LocalRunningJobs>
+                  <WaitingJobs>429496729</WaitingJobs>
+                  <LocalWaitingJobs>429496729</LocalWaitingJobs>
+                  <StagingJobs>429496729</StagingJobs>
+                  <SuspendedJobs>429496729</SuspendedJobs>
+                  <PreLRMSWaitingJobs>429496729</PreLRMSWaitingJobs>
+                  <EstimatedAverageWaitingTime>922337203</EstimatedAverageWaitingTime>
+                  <EstimatedWorstWaitingTime>922337203</EstimatedWorstWaitingTime>
+                  <FreeSlots>429496729</FreeSlots>
+                  <FreeSlotsWithDuration>FreeSlotsWithDuration0</FreeSlotsWithDuration>
+                  <UsedSlots>429496729</UsedSlots>
+                  <RequestedSlots>429496729</RequestedSlots>
+                  <ReservationPolicy>none</ReservationPolicy>
+                  <Tag>Tag0</Tag>
+                  <Extensions>
+                    <Extension Key="Key12">Extension12</Extension>
+                  </Extensions>
+                  <Associations>
+                    <ComputingEndpointID>ComputingEndpointID0</ComputingEndpointID>
+                    <ExecutionEnvironmentLocalID>ExecutionEnvironmentLocalID0</ExecutionEnvironmentLocalID>
+                    <ComputingActivityID>http://www.oxygenxml.com/</ComputingActivityID>
+                  </Associations>
+              </ComputingShare>
+            </ComputingShares>
+            <ComputingManager BaseType="Manager" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+                <ID>http://www.oxygenxml.com/</ID>
+                <Name>Name9</Name>
+                <Type>Type5</Type>
+                <Version>Version0</Version>
+                <Reservation>false</Reservation>
+                <BulkSubmission>false</BulkSubmission>
+                <TotalPhysicalCPUs>429496729</TotalPhysicalCPUs>
+                <TotalLogicalCPUs>429496729</TotalLogicalCPUs>
+                <TotalSlots>429496729</TotalSlots>
+                <SlotsUsedByLocalJobs>429496729</SlotsUsedByLocalJobs>
+                <SlotsUsedByGridJobs>429496729</SlotsUsedByGridJobs>
+                <Homogeneity>false</Homogeneity>
+                <NetworkInfo>NetworkInfo0</NetworkInfo>
+                <LogicalCPUDistribution>LogicalCPUDistribution0</LogicalCPUDistribution>
+                <WorkignAreaShared>false</WorkignAreaShared>
+                <WorkignAreaTotal>922337203</WorkignAreaTotal>
+                <WorkingAreaFree>922337203</WorkingAreaFree>
+                <WorkingAreaLifeTime>922337203</WorkingAreaLifeTime>
+                <CacheTotal>922337203</CacheTotal>
+                <CacheFree>922337203</CacheFree>
+                <TmpDir>TmpDir0</TmpDir>
+                <ScratchDir>ScratchDir0</ScratchDir>
+                <ApplicationDir>ApplicationDir0</ApplicationDir>
+                <OtherInfo>OtherInfo6</OtherInfo>
+                <Extensions>
+                  <Extension Key="Key13">Extension13</Extension>
+                </Extensions>
+                <Benchmark>
+                  <LocalID>LocalID9</LocalID>
+                  <Type>Type6</Type>
+                  <Value>2147483647</Value>
+                </Benchmark>
+                <ExecutionEnvironment BaseType="Resource" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+                    <ID>http://www.oxygenxml.com/</ID>
+                    <Name>Name10</Name>
+                    <Platform>Platform0</Platform>
+                    <VirtualMachine>false</VirtualMachine>
+                    <TotalInstances>429496729</TotalInstances>
+                    <UsedInstances>429496729</UsedInstances>
+                    <UnavailableInstances>429496729</UnavailableInstances>
+                    <PhysicalCPUs>429496729</PhysicalCPUs>
+                    <LogicalCPUs>429496729</LogicalCPUs>
+                    <CPUMultiplicity>singlecpu-singlecore</CPUMultiplicity>
+                    <CPUVendor>CPUVendor0</CPUVendor>
+                    <CPUModel>CPUModel0</CPUModel>
+                    <CPUVersion>CPUVersion0</CPUVersion>
+                    <CPUClockSpeed>429496729</CPUClockSpeed>
+                    <CPUTimeScalingFactor>3.14159E0</CPUTimeScalingFactor>
+                    <WallTimeScalingFactor>3.14159E0</WallTimeScalingFactor>
+                    <MainMemorySize>922337203</MainMemorySize>
+                    <VirtualMemorySize>922337203</VirtualMemorySize>
+                    <OSFamily>OSFamily0</OSFamily>
+                    <OSName>OSName0</OSName>
+                    <OSVersion>OSVersion0</OSVersion>
+                    <ConnectivityIn>false</ConnectivityIn>
+                    <ConnectivityOut>false</ConnectivityOut>
+                    <NetworkInfo>NetworkInfo1</NetworkInfo>
+                    <Extensions>
+                      <Extension Key="Key14">Extension14</Extension>
+                    </Extensions>
+                    <Benchmark>
+                      <LocalID>LocalID10</LocalID>
+                      <Type>Type7</Type>
+                      <Value>2147483647</Value>
+                    </Benchmark>
+                    <Associations>
+                      <ComputingShareLocalID>ComputingShareLocalID1</ComputingShareLocalID>
+                      <ApplicationEnvironmentLocalID>ApplicationEnvironmentLocalID0</ApplicationEnvironmentLocalID>
+                      <ComputingActivityID>http://www.oxygenxml.com/</ComputingActivityID>
+                    </Associations>
+                </ExecutionEnvironment>
+                <ApplicationEnvironments>
+                  <ApplicationEnvironment CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+                    <LocalID>LocalID11</LocalID>
+                    <Name>Name11</Name>
+                    <Version>Version1</Version>
+                    <Repository>http://www.oxygenxml.com/</Repository>
+                    <State>State0</State>
+                    <RemovalDate>2006-05-04T18:13:51.0Z</RemovalDate>
+                    <License>opensource</License>
+                    <Description>Description2</Description>
+                    <BestBenchmark>BestBenchmark0</BestBenchmark>
+                    <ParallelSupport>ParallelSupport0</ParallelSupport>
+                    <MaxSlots>429496729</MaxSlots>
+                    <MaxJobs>429496729</MaxJobs>
+                    <MaxUserSeats>429496729</MaxUserSeats>
+                    <FreeSlots>429496729</FreeSlots>
+                    <FreeJobs>429496729</FreeJobs>
+                    <FreeUserSeats>429496729</FreeUserSeats>
+                    <Extensions>
+                      <Extension Key="Key15">Extension15</Extension>
+                    </Extensions>
+                    <ApplicationHandle>
+                      <LocalID>LocalID12</LocalID>
+                      <Type>Type8</Type>
+                      <Value>Value0</Value>
+                      <Extensions>
+                        <Extension Key="Key16">Extension16</Extension>
+                      </Extensions>
+                    </ApplicationHandle>
+                    <Associations>
+                      <ExecutionEnvironmentLocalID>ExecutionEnvironmentLocalID1</ExecutionEnvironmentLocalID>
+                    </Associations>
+                  </ApplicationEnvironment>
+                </ApplicationEnvironments>
+            </ComputingManager>
+            <ToStorageService CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+              <LocalID>LocalID13</LocalID>
+              <LocalPath>LocalPath0</LocalPath>
+              <RemotePath>RemotePath0</RemotePath>
+              <Extensions>
+                <Extension Key="Key17">Extension17</Extension>
+              </Extensions>
+              <Associations>
+                <ComputingServiceID>http://www.oxygenxml.com/</ComputingServiceID>
+                <StorageServiceID>http://www.oxygenxml.com/</StorageServiceID>
+              </Associations>
+            </ToStorageService>
+            <ComputingActivitites>
+              <ComputingActivitiy BaseType="Activity" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+                  <ID>http://www.oxygenxml.com/</ID>
+                  <Name>Name12</Name>
+                  <Type>single</Type>
+                  <IDFromEndpoint>http://www.oxygenxml.com/</IDFromEndpoint>
+                  <LocalIDFromManager>LocalIDFromManager0</LocalIDFromManager>
+                  <JobDescription>JobDescription1</JobDescription>
+                  <State>State1</State>
+                  <RestartState>RestartState0</RestartState>
+                  <ExitCode>2147483647</ExitCode>
+                  <ComputingManagerExitCode>ComputingManagerExitCode0</ComputingManagerExitCode>
+                  <Error>Error0</Error>
+                  <WaitingPosition>429496729</WaitingPosition>
+                  <UserDomain>UserDomain0</UserDomain>
+                  <Owner>Owner1</Owner>
+                  <LocalOwner>LocalOwner0</LocalOwner>
+                  <RequestedTotalWallTime>922337203</RequestedTotalWallTime>
+                  <RequestedTotalCPUTime>922337203</RequestedTotalCPUTime>
+                  <RequestedSlots>429496729</RequestedSlots>
+                  <RequestedApplicationEnvironment>RequestedApplicationEnvironment0</RequestedApplicationEnvironment>
+                  <StdIn>StdIn0</StdIn>
+                  <StdOut>StdOut0</StdOut>
+                  <StdErr>StdErr0</StdErr>
+                  <LogDir>LogDir0</LogDir>
+                  <ExecutionNode>ExecutionNode0</ExecutionNode>
+                  <Queue>Queue0</Queue>
+                  <UsedTotalWallTime>922337203</UsedTotalWallTime>
+                  <UsedTotalCPUTime>922337203</UsedTotalCPUTime>
+                  <UsedMainMemory>922337203</UsedMainMemory>
+                  <SubmissionTime>2006-05-04T18:13:51.0Z</SubmissionTime>
+                  <ComputingManagerSubmissionTime>2006-05-04T18:13:51.0Z</ComputingManagerSubmissionTime>
+                  <StartTime>2006-05-04T18:13:51.0Z</StartTime>
+                  <ComputingManagerEndTime>2006-05-04T18:13:51.0Z</ComputingManagerEndTime>
+                  <EndTime>2006-05-04T18:13:51.0Z</EndTime>
+                  <WorkingAreaEraseTime>2006-05-04T18:13:51.0Z</WorkingAreaEraseTime>
+                  <ProxyExpirationTime>2006-05-04T18:13:51.0Z</ProxyExpirationTime>
+                  <SubmissionHost>SubmissionHost0</SubmissionHost>
+                  <SubmissionClientName>SubmissionClientName0</SubmissionClientName>
+                  <OtherMessages>OtherMessages0</OtherMessages>
+                  <Extensions>
+                    <Extension Key="Key18">Extension18</Extension>
+                  </Extensions>
+                  <Associations>
+                    <ComputingEndpointID>http://www.oxygenxml.com/</ComputingEndpointID>
+                    <ComputingShareLocalID>ComputingShareLocalID2</ComputingShareLocalID>
+                    <ExecutionEnvironmentLocalID>ExecutionEnvironmentLocalID2</ExecutionEnvironmentLocalID>
+                    <UserDomainID>http://www.oxygenxml.com/</UserDomainID>
+                    <ActivityID>http://www.oxygenxml.com/</ActivityID>
+                  </Associations>
+              </ComputingActivitiy>
+            </ComputingActivitites>
+            <Associations>
+              <ServiceID>http://www.oxygenxml.com/</ServiceID>
+            </Associations>
+        </ComputingService>
+        <StorageService BaseType="Service" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+            <ID>http://www.oxygenxml.com/</ID>
+            <Name>Name13</Name>
+            <Capability>security.authentication</Capability>
+            <Type>Type9</Type>
+            <QualityLevel>production</QualityLevel>
+            <StatusPage>http://www.oxygenxml.com/</StatusPage>
+            <Complexity>Complexity2</Complexity>
+            <OtherInfo>OtherInfo7</OtherInfo>
+            <StorageServiceCapacity CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+              <LocalID>LocalID14</LocalID>
+              <Type>Type10</Type>
+              <TotalSize>922337203</TotalSize>
+              <FreeSize>922337203</FreeSize>
+              <UsedSize>922337203</UsedSize>
+              <ReservedSize>922337203</ReservedSize>
+              <OtherInfo>OtherInfo8</OtherInfo>
+              <Extensions>
+                <Extension Key="Key19">Extension19</Extension>
+              </Extensions>
+            </StorageServiceCapacity>
+            <StorageAccessProtocol CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+              <LocalID>LocalID15</LocalID>
+              <Type>Type11</Type>
+              <Version>Version2</Version>
+              <MaxStreams>2147483647</MaxStreams>
+              <OtherInfo>OtherInfo9</OtherInfo>
+              <Extensions>
+                <Extension Key="Key20">Extension20</Extension>
+              </Extensions>
+            </StorageAccessProtocol>
+            <StorageEndpoint BaseType="Endpoint" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+                <ID>http://www.oxygenxml.com/</ID>
+                <Name>Name14</Name>
+                <URL>http://www.oxygenxml.com/</URL>
+                <Capability>security.authentication</Capability>
+                <Technology>Technology2</Technology>
+                <Interface>http://www.oxygenxml.com/</Interface>
+                <InterfaceExtension>http://www.oxygenxml.com/</InterfaceExtension>
+                <WSDL>http://www.oxygenxml.com/</WSDL>
+                <SupportedProfile>http://www.oxygenxml.com/</SupportedProfile>
+                <Semantics>http://www.oxygenxml.com/</Semantics>
+                <Implementor>Implementor2</Implementor>
+                <ImplementationName>ImplementationName2</ImplementationName>
+                <ImplementationVersion>ImplementationVersion2</ImplementationVersion>
+                <QualityLevel>production</QualityLevel>
+                <HealthState>ok</HealthState>
+                <HealthStateInfo>HealthStateInfo2</HealthStateInfo>
+                <ServingState>production</ServingState>
+                <StartTime>2006-05-04T18:13:51.0Z</StartTime>
+                <IssuerCA>IssuerCA2</IssuerCA>
+                <TrustedCA>TrustedCA2</TrustedCA>
+                <DowntimeAnnounce>2006-05-04T18:13:51.0Z</DowntimeAnnounce>
+                <DowntimeStart>2006-05-04T18:13:51.0Z</DowntimeStart>
+                <DowntimeEnd>2006-05-04T18:13:51.0Z</DowntimeEnd>
+                <DowntimeInfo>DowntimeInfo2</DowntimeInfo>
+                <OtherInfo>OtherInfo10</OtherInfo>
+                <Extensions>
+                  <Extension Key="Key21">Extension21</Extension>
+                </Extensions>
+                <AccessPolicy BaseType="Policy" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+                  <LocalID>LocalID16</LocalID>
+                  <Scheme>Scheme2</Scheme>
+                  <Rule>Rule10</Rule>
+                  <Rule>Rule11</Rule>
+                  <Rule>Rule12</Rule>
+                  <Rule>Rule13</Rule>
+                  <Rule>Rule14</Rule>
+                </AccessPolicy>
+                <Associations>
+                  <StorageShareLocalID>http://www.oxygenxml.com/</StorageShareLocalID>
+                </Associations>
+            </StorageEndpoint>
+            <StorageShares>
+              <StorageShare BaseType="Share" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+                  <LocalID>LocalID17</LocalID>
+                  <Name>Name15</Name>
+                  <Description>Description3</Description>
+                  <ServingState>production</ServingState>
+                  <Path>Path0</Path>
+                  <SharingID>SharingID0</SharingID>
+                  <AccessLatency>online</AccessLatency>
+                  <RetentionPolicy>custodial</RetentionPolicy>
+                  <ExpirationMode>neverexpire</ExpirationMode>
+                  <DefaultLifeTime>429496729</DefaultLifeTime>
+                  <MaximumLifeTime>429496729</MaximumLifeTime>
+                  <Tag>Tag1</Tag>
+                  <OtherInfo>OtherInfo11</OtherInfo>
+                  <Extensions>
+                    <Extension Key="Key22">Extension22</Extension>
+                  </Extensions>
+                  <MappingPolicy BaseType="Policy" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+                    <LocalID>LocalID18</LocalID>
+                    <Scheme>Scheme3</Scheme>
+                    <Rule>Rule15</Rule>
+                    <Rule>Rule16</Rule>
+                    <Rule>Rule17</Rule>
+                    <Rule>Rule18</Rule>
+                    <Rule>Rule19</Rule>
+                  </MappingPolicy>
+                  <StorageShareCapacity CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+                    <LocalID>LocalID19</LocalID>
+                    <Type>Type12</Type>
+                    <TotalSize>922337203</TotalSize>
+                    <FreeSize>922337203</FreeSize>
+                    <UsedSize>922337203</UsedSize>
+                    <ReservedSize>922337203</ReservedSize>
+                    <OtherInfo>OtherInfo12</OtherInfo>
+                    <Extensions>
+                      <Extension Key="Key23">Extension23</Extension>
+                    </Extensions>
+                  </StorageShareCapacity>
+                  <Associations>
+                    <StorageEndpointID>http://www.oxygenxml.com/</StorageEndpointID>
+                    <StorageResourceID>http://www.oxygenxml.com/</StorageResourceID>
+                  </Associations>
+              </StorageShare>
+            </StorageShares>
+            <StorageManager BaseType="Manager" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+                <ID>http://www.oxygenxml.com/</ID>
+                <Name>Name16</Name>
+                <Type>Type13</Type>
+                <Version>Version3</Version>
+                <OtherInfo>OtherInfo13</OtherInfo>
+                <Extensions>
+                  <Extension Key="Key24">Extension24</Extension>
+                </Extensions>
+                <StorageResource BaseType="Resource" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+                    <ID>http://www.oxygenxml.com/</ID>
+                    <Name>Name17</Name>
+                    <Type>Type14</Type>
+                    <Latency>online</Latency>
+                    <TotalSize>922337203</TotalSize>
+                    <FreeSize>922337203</FreeSize>
+                    <UsedSize>922337203</UsedSize>
+                    <ReservedSize>922337203</ReservedSize>
+                    <OtherInfo>OtherInfo14</OtherInfo>
+                    <Extensions>
+                      <Extension Key="Key25">Extension25</Extension>
+                    </Extensions>
+                    <Associations>
+                      <StorageShareLocalID>http://www.oxygenxml.com/</StorageShareLocalID>
+                    </Associations>
+                </StorageResource>
+            </StorageManager>
+            <ToComputingService CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+              <LocalID>LocalID20</LocalID>
+              <NetworkInfo>NetworkInfo2</NetworkInfo>
+              <Bandwidth>429496729</Bandwidth>
+              <OtherInfo>OtherInfo15</OtherInfo>
+              <Extensions>
+                <Extension Key="Key26">Extension26</Extension>
+              </Extensions>
+              <Associations>
+                <StorageAccessProtocolLocalID>http://www.oxygenxml.com/</StorageAccessProtocolLocalID>
+                <ComputingServiceID>http://www.oxygenxml.com/</ComputingServiceID>
+                <StorageServiceID>http://www.oxygenxml.com/</StorageServiceID>
+              </Associations>
+            </ToComputingService>
+        </StorageService>
+      </Services>
+      <Associations>
+        <AdminDomainID>http://www.oxygenxml.com/</AdminDomainID>
+      </Associations>
+  </AdminDomain>
+  <UserDomain xmlns="" BaseType="Domain" CreationTime="2006-05-04T18:13:51.0Z" Validity="922337203">
+      <ID>http://www.oxygenxml.com/</ID>
+      <Name>Name18</Name>
+      <Description>Description4</Description>
+      <WWW>http://www.oxygenxml.com/</WWW>
+      <OtherInfo>OtherInfo16</OtherInfo>
+      <Level>429496729</Level>
+      <UserManager>http://www.oxygenxml.com/</UserManager>
+      <Member>Member0</Member>
+      <Extensions>
+        <Extension Key="Key27">Extension27</Extension>
+      </Extensions>
+      <Associations>
+        <UserDomainID>http://www.oxygenxml.com/</UserDomainID>
+      </Associations>
+  </UserDomain>
+</Domains>

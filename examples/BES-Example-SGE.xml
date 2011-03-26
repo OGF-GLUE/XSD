@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Domains xmlns="http://schemas.ogf.org/glue/2008/05/spec_2.0_d42_r01"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://schemas.ogf.org/glue/2008/05/spec_2.0_d42_r01 ../xsd/GLUE2.xsd">
+  <AdminDomain xmlns="" BaseType="Domain">
+    <ID>urn:admindomain:acme</ID>
+    <Services>
+      <ComputingService BaseType="Service">
+        <ID>urn:acme:cs</ID>
+        <Name>ACME BES Endpoint</Name>
+        <Type>org.cs</Type>
+        <QualityLevel>production</QualityLevel>
+        <ComputingEndpoint BaseType="Endpoint">
+          <ID>urn:acme:cs:bes</ID>
+          <URL>https://knowarc1.grid.niif.hu:60000/arex</URL>
+          <Capability>executionmanagement.jobexecution</Capability>
+          <Technology>webservice</Technology>
+          <Interface>urn:ogsa:bes:1.0</Interface>
+          <WSDL>http://knowarc1.grid.niif.hu/wsdl/ </WSDL>
+          <QualityLevel>production</QualityLevel>
+          <HealthState>ok</HealthState>
+          <ServingState>production</ServingState>
+          <AccessPolicy BaseType="Policy">
+            <LocalID>urn:rule:1</LocalID>
+            <Scheme>basic</Scheme>
+            <Rule>fqan:/ALL</Rule>
+          </AccessPolicy>
+          <Associations>
+            <ComputingShareLocalID>green</ComputingShareLocalID>
+            <ComputingShareLocalID>blue</ComputingShareLocalID>
+          </Associations>
+        </ComputingEndpoint>
+        <ComputingShares>
+          <ComputingShare BaseType="Share">
+            <LocalID>green</LocalID>
+            <MaxWallTime>432000</MaxWallTime>
+            <MinWallTime>1000</MinWallTime>
+            <MaxCPUTime>432000</MaxCPUTime>
+            <MaxTotalJobs>50</MaxTotalJobs>
+            <MaxRunningJobs>500</MaxRunningJobs>
+            <MaxWaitingJobs>200</MaxWaitingJobs>
+            <ServingState>production</ServingState>
+            <TotalJobs>40</TotalJobs>
+            <RunningJobs>30</RunningJobs>
+            <WaitingJobs>1</WaitingJobs>
+            <FreeSlots>1</FreeSlots>
+            <MappingPolicy BaseType="Policy">
+              <LocalID>urn:rule:2</LocalID>
+              <Scheme>VOMS</Scheme>
+              <Rule>fqan:/green</Rule>
+            </MappingPolicy>
+            <Associations>
+              <ComputingEndpointID>urn:acme:cs:bes</ComputingEndpointID>
+              <ExecutionEnvironmentLocalID>urn:acme:xeon</ExecutionEnvironmentLocalID>
+            </Associations>
+          </ComputingShare>
+          <ComputingShare BaseType="Share">
+            <LocalID>blue</LocalID>
+            <MaxWallTime>432000</MaxWallTime>
+            <MinWallTime>1000</MinWallTime>
+            <MaxCPUTime>432000</MaxCPUTime>
+            <MaxTotalJobs>50</MaxTotalJobs>
+            <MaxRunningJobs>500</MaxRunningJobs>
+            <MaxWaitingJobs>200</MaxWaitingJobs>
+            <ServingState>production</ServingState>
+            <TotalJobs>40</TotalJobs>
+            <RunningJobs>30</RunningJobs>
+            <WaitingJobs>1</WaitingJobs>
+            <FreeSlots>1</FreeSlots>
+            <MappingPolicy BaseType="Policy">
+              <LocalID>urn:rule:2</LocalID>
+              <Scheme>basic</Scheme>
+              <Rule>fqan:/blue</Rule>
+            </MappingPolicy>
+            <Associations>
+              <ComputingEndpointID>urn:acme:cs:bes</ComputingEndpointID>
+              <ExecutionEnvironmentLocalID>urn:acme:pentium</ExecutionEnvironmentLocalID>
+            </Associations>
+          </ComputingShare>
+        </ComputingShares>
+        <ComputingManager BaseType="Manager">
+          <ID>urn:hu:niif:sge</ID>
+          <Type>SGE</Type>
+          <Version>6.1</Version>
+          <TotalPhysicalCPUs>1</TotalPhysicalCPUs>
+          <TotalLogicalCPUs>4</TotalLogicalCPUs>
+          <Homogeneity>false</Homogeneity>
+          <ExecutionEnvironment BaseType="Resource">
+            <ID>urn:</ID>
+            <Name>Name10</Name>
+            <Platform>Platform0</Platform>
+            <VirtualMachine>true</VirtualMachine>
+            <TotalInstances>429496729</TotalInstances>
+            <UsedInstances>429496729</UsedInstances>
+            <UnavailableInstances>429496729</UnavailableInstances>
+            <PhysicalCPUs>429496729</PhysicalCPUs>
+            <LogicalCPUs>429496729</LogicalCPUs>
+            <CPUMultiplicity>singlecpu-singlecore</CPUMultiplicity>
+            <CPUVendor>CPUVendor0</CPUVendor>
+            <CPUModel>CPUModel0</CPUModel>
+            <CPUVersion>CPUVersion0</CPUVersion>
+            <CPUClockSpeed>429496729</CPUClockSpeed>
+            <CPUTimeScalingFactor>3.14159E0</CPUTimeScalingFactor>
+            <WallTimeScalingFactor>3.14159E0</WallTimeScalingFactor>
+            <MainMemorySize>922337203</MainMemorySize>
+            <VirtualMemorySize>922337203</VirtualMemorySize>
+            <OSFamily>OSFamily0</OSFamily>
+            <OSName>OSName0</OSName>
+            <OSVersion>OSVersion0</OSVersion>
+            <ConnectivityIn>false</ConnectivityIn>
+            <ConnectivityOut>false</ConnectivityOut>
+            <NetworkInfo>NetworkInfo1</NetworkInfo>
+            <Extensions>
+              <Extension Key="Key14">Extension14</Extension>
+            </Extensions>
+            <Benchmark>
+              <LocalID>LocalID10</LocalID>
+              <Type>Type7</Type>
+              <Value>2147483647</Value>
+            </Benchmark>
+            <Associations>
+              <ComputingShareLocalID>ComputingShareLocalID1</ComputingShareLocalID>
+              <ApplicationEnvironmentLocalID>ApplicationEnvironmentLocalID0</ApplicationEnvironmentLocalID>
+              <ComputingActivityID>http://www.oxygenxml.com/</ComputingActivityID>
+            </Associations>
+          </ExecutionEnvironment>
+          <ExecutionEnvironment BaseType="Resource">
+            <ID>urn:acme:xeon</ID>
+            <Platform>itanium</Platform>
+            <TotalInstances>50</TotalInstances>
+            <PhysicalCPUs>100</PhysicalCPUs>
+            <LogicalCPUs>200</LogicalCPUs>
+            <CPUVendor>Intel</CPUVendor>
+            <CPUModel>Intel(r) Xeon(r)</CPUModel>
+            <CPUVersion>5160</CPUVersion>
+            <CPUClockSpeed>3000</CPUClockSpeed>
+            <MainMemorySize>4000000000</MainMemorySize>
+            <VirtualMemorySize>4000000000</VirtualMemorySize>
+            <OSFamily>linux</OSFamily>
+            <OSName>scientificlinux</OSName>
+            <OSVersion>4.0.5</OSVersion>
+            <ConnectivityIn>false</ConnectivityIn>
+            <ConnectivityOut>true</ConnectivityOut>
+            <NetworkInfo>infiniband</NetworkInfo>
+            <Benchmark>
+              <LocalID>urn:acme:xeon:benchmark</LocalID>
+              <Type>specint2000</Type>
+              <Value>3016</Value>
+            </Benchmark>
+            <Associations>
+              <ComputingShareLocalID>green</ComputingShareLocalID>
+            </Associations>
+          </ExecutionEnvironment>
+        </ComputingManager>
+      </ComputingService>
+    </Services>
+  </AdminDomain>
+</Domains>

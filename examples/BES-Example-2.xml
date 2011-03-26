@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Domains xmlns="http://schemas.ogf.org/glue/2008/05/spec_2.0_d42_r01"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://schemas.ogf.org/glue/2008/05/spec_2.0_d42_r01 ../xsd/GLUE2.xsd">
+  <AdminDomain xmlns="" BaseType="Domain">
+    <ID>urn:admindomain:acme</ID>
+    <Services>
+      <ComputingService BaseType="Service">
+        <ID>urn:acme:cs</ID>
+        <Name>ACME BES Endpoint</Name>
+        <Type>org.cs</Type>
+        <QualityLevel>production</QualityLevel>
+        <ComputingEndpoint BaseType="Endpoint">
+          <ID>urn:acme:cs:bes</ID>
+          <URL>https://bes.acme.com:7443/...</URL>
+          <Capability>executionmanagement.jobexecution</Capability>
+          <Technology>webservice</Technology>
+          <Interface>urn:ogsa:bes:1.0</Interface>
+          <WSDL>http://someurl/ogsa-bes.wsdl</WSDL>
+          <QualityLevel>production</QualityLevel>
+          <HealthState>ok</HealthState>
+          <ServingState>production</ServingState>
+          <AccessPolicy BaseType="Policy">
+            <LocalID>urn:rule:1</LocalID>
+            <Scheme>basic</Scheme>
+            <Rule>fqan:/blue</Rule>
+            <Rule>fqan:/green</Rule>
+          </AccessPolicy>
+          <Associations>
+            <ComputingShareLocalID>green</ComputingShareLocalID>
+            <ComputingShareLocalID>blue</ComputingShareLocalID>
+          </Associations>
+        </ComputingEndpoint>
+        <ComputingShares>
+          <ComputingShare BaseType="Share">
+            <LocalID>green</LocalID>
+            <MaxWallTime>432000</MaxWallTime>
+            <MinWallTime>1000</MinWallTime>
+            <MaxCPUTime>432000</MaxCPUTime>
+            <MaxTotalJobs>50</MaxTotalJobs>
+            <MaxRunningJobs>500</MaxRunningJobs>
+            <MaxWaitingJobs>200</MaxWaitingJobs>
+            <ServingState>production</ServingState>
+            <TotalJobs>40</TotalJobs>
+            <RunningJobs>30</RunningJobs>
+            <WaitingJobs>1</WaitingJobs>
+            <FreeSlots>1</FreeSlots>
+            <MappingPolicy BaseType="Policy">
+              <LocalID>urn:rule:2</LocalID>
+              <Scheme>VOMS</Scheme>
+              <Rule>fqan:/green</Rule>
+            </MappingPolicy>
+            <Associations>
+              <ComputingEndpointID>urn:acme:cs:bes</ComputingEndpointID>
+              <ExecutionEnvironmentLocalID>urn:acme:xeon</ExecutionEnvironmentLocalID>
+            </Associations>
+          </ComputingShare>
+          <ComputingShare BaseType="Share">
+            <LocalID>blue</LocalID>
+            <MaxWallTime>432000</MaxWallTime>
+            <MinWallTime>1000</MinWallTime>
+            <MaxCPUTime>432000</MaxCPUTime>
+            <MaxTotalJobs>50</MaxTotalJobs>
+            <MaxRunningJobs>500</MaxRunningJobs>
+            <MaxWaitingJobs>200</MaxWaitingJobs>
+            <ServingState>production</ServingState>
+            <TotalJobs>40</TotalJobs>
+            <RunningJobs>30</RunningJobs>
+            <WaitingJobs>1</WaitingJobs>
+            <FreeSlots>1</FreeSlots>
+            <MappingPolicy BaseType="Policy">
+              <LocalID>urn:rule:2</LocalID>
+              <Scheme>basic</Scheme>
+              <Rule>fqan:/blue</Rule>
+            </MappingPolicy>
+            <Associations>
+              <ComputingEndpointID>urn:acme:cs:bes</ComputingEndpointID>
+              <ExecutionEnvironmentLocalID>urn:acme:pentium</ExecutionEnvironmentLocalID>
+            </Associations>
+          </ComputingShare>
+        </ComputingShares>
+        <ComputingManager BaseType="Manager">
+          <ID>urn:acme:cluster</ID>
+          <Type>OpenPBS</Type>
+          <Version>3.0</Version>
+          <Homogeneity>false</Homogeneity>
+          <ExecutionEnvironment BaseType="Resource">
+            <ID>urn:acme:pentium</ID>
+            <Platform>i386</Platform>
+            <TotalInstances>50</TotalInstances>
+            <PhysicalCPUs>50</PhysicalCPUs>
+            <LogicalCPUs>50</LogicalCPUs>
+            <CPUVendor>Intel</CPUVendor>
+            <CPUModel>Intel(r) Pentium 4(r)</CPUModel>
+            <CPUClockSpeed>2000</CPUClockSpeed>
+            <MainMemorySize>1000000000</MainMemorySize>
+            <VirtualMemorySize>1000000000</VirtualMemorySize>
+            <OSFamily>linux</OSFamily>
+            <OSName>scientificlinux</OSName>
+            <OSVersion>4.0.5</OSVersion>
+            <Benchmark>
+              <LocalID>benchmark:1</LocalID>
+              <Type>specint2000</Type>
+              <Value>785</Value>
+            </Benchmark>
+            <Associations>
+              <ComputingShareLocalID>blue</ComputingShareLocalID>
+            </Associations>
+          </ExecutionEnvironment>
+          <ExecutionEnvironment BaseType="Resource">
+            <ID>urn:acme:xeon</ID>
+            <Platform>itanium</Platform>
+            <TotalInstances>50</TotalInstances>
+            <PhysicalCPUs>100</PhysicalCPUs>
+            <LogicalCPUs>200</LogicalCPUs>
+            <CPUVendor>Intel</CPUVendor>
+            <CPUModel>Intel(r) Xeon(r)</CPUModel>
+            <CPUVersion>5160</CPUVersion>
+            <CPUClockSpeed>3000</CPUClockSpeed>
+            <MainMemorySize>4000000000</MainMemorySize>
+            <VirtualMemorySize>4000000000</VirtualMemorySize>
+            <OSFamily>linux</OSFamily>
+            <OSName>scientificlinux</OSName>
+            <OSVersion>4.0.5</OSVersion>
+            <ConnectivityIn>false</ConnectivityIn>
+            <ConnectivityOut>true</ConnectivityOut>
+            <NetworkInfo>infiniband</NetworkInfo>
+            <Benchmark>
+              <LocalID>urn:acme:xeon:benchmark</LocalID>
+              <Type>specint2000</Type>
+              <Value>3016</Value>
+            </Benchmark>
+            <Associations>
+              <ComputingShareLocalID>green</ComputingShareLocalID>
+            </Associations>
+          </ExecutionEnvironment>
+        </ComputingManager>
+      </ComputingService>
+    </Services>
+  </AdminDomain>
+</Domains>
