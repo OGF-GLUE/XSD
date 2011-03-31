@@ -915,6 +915,25 @@
                     <enumeration value="unicore:stagingout"/>
                     <enumeration value="nordugrid:accepting"/>
                     <enumeration value="nordugrid:pending:accepted"/>
+                    <enumeration value="nordugrid:accepted"/>
+                    <enumeration value="nordugrid:pending:preparing"/>
+                    <enumeration value="nordugrid:preparing"/>
+                    <enumeration value="nordugrid:prepared"/>
+                    <enumeration value="nordugrid:submitting"/>
+                    <enumeration value="nordugrid:pending:inlrms"/>
+                    <enumeration value="nordugrid:inlrms:q"/>
+                    <enumeration value="nordugrid:inlrms:h"/>
+                    <enumeration value="nordugrid:inlrms:r"/>
+                    <enumeration value="nordugrid:inlrms:s"/>
+                    <enumeration value="nordugrid:inlrms:e"/>
+                    <enumeration value="nordugrid:inlrms:o"/>
+                    <enumeration value="nordugrid:inlrms:executed"/>
+                    <enumeration value="nordugrid:finishing"/>
+                    <enumeration value="nordugrid:canceling"/>
+                    <enumeration value="nordugrid:failed"/>
+                    <enumeration value="nordugrid:killed"/>
+                    <enumeration value="nordugrid:finished"/>
+                    <enumeration value="nordugrid:deleted"/>
                 </appinfo>
             </annotation>
         </restriction>
