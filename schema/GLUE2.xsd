@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--     OGF GLUE 2.0 - XML Schema mapping  
-    Release: 1 Apr 2011
+<!-- OGF GLUE 2.0 - XML Schema mapping  
+    Release: 31 Mar 2011
     
-    Copyright (c) 2011
+    Copyright (c) 2011 
+
+    Sergio Andreozzi (EGI.eu)
+    Balazs Konya (Lund University)
+    Shiraz Memon (Forschungszentrum Juelich GmbH)
+    Paul Millar (DESY)
+    Adrian Taga (Oslo University)
     
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -24,34 +30,37 @@
     elementFormDefault="qualified" attributeFormDefault="unqualified">
 
     <element name="Domains" type="glue:Domains_t"/>
-    <element name="Domain" type="glue:Domain_t"/>
+    <element name="AdminDomain" type="glue:AdminDomain_t"/>
+    <element name="UserDomain" type="glue:UserDomain_t"/> 
     <element name="Location" type="glue:Location_t"/>
     <element name="Contact" type="glue:Contact_t"/>
-    <element name="AdminDomain" type="glue:AdminDomain_t"/>
-    <element name="UserDomain" type="glue:UserDomain_t"/>
-    
     <element name="Service" type="glue:Service_t"/>
     <element name="ComputingService" type="glue:ComputingService_t"/>
     <element name="StorageService" type="glue:StorageService_t"/>
-    
-    <element name="Extension" type="glue:Extension_t"/>
-    <element name="Extensions" type="glue:Extensions_t"/>
-    
-    
-    <element name="Activity" type="glue:Activity_t"/>
-    <element name="ActivityBase" type="glue:ActivityBase_t"/>
- 
-
-    <element name="Type" type="glue:ServiceType_t"/>
-    <element name="Benchmark" type="glue:Benchmark_t"/>
-    
-    <element name="Entity" type="glue:Entity"/>
-    
-    <element name="Policy" type="glue:Policy_t"/>
-    <element name="MappingPolicy" type="glue:MappingPolicy_t"/>
-    <element name="AccessPolicy" type="glue:AccessPolicy_t"/>
-
-    <element name="Staging" type="glue:Staging_t"/>
+    <element name="ComputingActivity" type="glue:ComputingActivity_t"/>
+    <element name="ComputingActivities">
+        <complexType>
+            <sequence>
+                <element ref="glue:ComputingActivity" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ExecutionEnvironment" type="glue:ExecutionEnvironment_t"/>
+    <element name="ExecutionEnvironments">
+        <complexType>
+            <sequence>
+                <element ref="glue:ExecutionEnvironment" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ApplicationEnvironment" type="glue:ApplicationEnvironment_t"/>
+    <element name="ApplicationEnvironments">
+        <complexType>
+            <sequence>
+                <element ref="glue:ApplicationEnvironment" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
 
     <!-- BEGIN MAIN ENTITIES -->
     <complexType name="Extension_t">
@@ -59,6 +68,7 @@
             <element name="LocalID" type="glue:LocalID_t" minOccurs="1" maxOccurs="1"/>
             <element name="Key" type="string" minOccurs="1" maxOccurs="1"/>
             <element name="Value" type="string" minOccurs="1" maxOccurs="1"/>
+            <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="1"/>
         </sequence>
     </complexType>
 
@@ -415,13 +425,7 @@
                             </sequence>
                         </complexType>
                     </element>
-                    <element name="ComputingActivities" minOccurs="0" maxOccurs="1">
-                        <complexType>
-                            <sequence>
-                                <element name="ComputingActivity" type="glue:ComputingActivity_t" minOccurs="0" maxOccurs="unbounded"/>
-                            </sequence>
-                        </complexType>
-                    </element>
+                    <element ref="glue:ComputingActivities" minOccurs="0" maxOccurs="1" /> 
                 </sequence>
             </extension>
         </complexContent>
@@ -524,20 +528,8 @@
                     <element name="ScratchDir" type="string" minOccurs="0" maxOccurs="1"/>
                     <element name="ApplicationDir" type="string" minOccurs="0" maxOccurs="1"/>
                     <element name="Benchmark" type="glue:Benchmark_t" minOccurs="0" maxOccurs="unbounded"/>
-                    <element name="ExecutionEnvironments" minOccurs="0" maxOccurs="1">
-                            <complexType>
-                                            <sequence>
-                                              <element name="ExecutionEnvironment" type="glue:ExecutionEnvironment_t" minOccurs="0" maxOccurs="unbounded"/>
-                                            </sequence>
-                                    </complexType>
-                                </element>
-                    <element name="ApplicationEnvironments" minOccurs="0" maxOccurs="unbounded">
-                        <complexType>
-                            <sequence>
-                                       <element name="ApplicationEnvironment" type="glue:ApplicationEnvironment_t" minOccurs="0" maxOccurs="unbounded"/>
-                            </sequence>
-                        </complexType>
-                    </element>
+                    <element ref="glue:ExecutionEnvironments" minOccurs="0" maxOccurs="1"/>
+                    <element ref="glue:ApplicationEnvironments" minOccurs="0" maxOccurs="1"/>
                 </sequence>
             </extension>
         </complexContent>
@@ -547,18 +539,7 @@
         <complexContent>
             <extension base="glue:Entity">
                 <sequence>             
-                    <element name="Type" type="string" minOccurs="1" maxOccurs="1">
-                        <annotation>
-                                       <appinfo>
-                                        <enumeration value="bogomips"/>
-                                        <enumeration value="cfp2006"/>
-                                        <enumeration value="cint2006"/>
-                                        <enumeration value="linpack"/>
-                                        <enumeration value="specfp2000"/>
-                                        <enumeration value="specint2000"/>
-                       </appinfo>
-                        </annotation>    
-                    </element>                
+                    <element name="Type" type="glue:BenchmarkType_t" minOccurs="1" maxOccurs="1"/>                      
                     <element name="Value" type="float" minOccurs="1" maxOccurs="1"/>
                 </sequence>
             </extension>
@@ -616,18 +597,7 @@
                     <element name="RemovalDate" type="glue:dateTime" minOccurs="0" maxOccurs="1"/>
                     <element name="License" type="glue:License_t" minOccurs="0" maxOccurs="1"/>
                     <element name="Description" type="string" minOccurs="0" maxOccurs="1"/>
-                    <element name="BestBenchmark" type="string" minOccurs="0" maxOccurs="unbounded">
-                        <annotation>
-                            <appinfo>
-                                <enumeration value="bogomips"/>
-                                <enumeration value="cfp2006"/>
-                                <enumeration value="cint2006"/>
-                                <enumeration value="linpack"/>
-                                <enumeration value="specfp2000"/>
-                                <enumeration value="specint2000"/>
-                            </appinfo>
-                        </annotation>
-                    </element>
+                    <element name="BestBenchmark" type="glue:BenchmarkType_t" minOccurs="0" maxOccurs="unbounded"/>
                     <element name="ParallelSupport" type="string" minOccurs="0" maxOccurs="1">
                         <annotation>
                             <appinfo>
@@ -695,7 +665,7 @@
                     <element name="LocalOwner" type="string" minOccurs="0" maxOccurs="1"/>
                     <element name="RequestedTotalWallTime" type="unsignedLong" minOccurs="0" maxOccurs="1"/>
                     <element name="RequestedTotalCPUTime" type="unsignedLong" minOccurs="0" maxOccurs="1"/>
-                    <element name="RequestedSlots" type="unsignedLong" minOccurs="0" maxOccurs="1"/>
+                    <element name="RequestedSlots" type="unsignedInt" minOccurs="0" maxOccurs="1"/>
                     <element name="RequestedApplicationEnvironment" type="string" minOccurs="0" maxOccurs="unbounded"/>
                     <element name="StdIn" type="string" minOccurs="0" maxOccurs="1"/>
                     <element name="StdOut" type="string" minOccurs="0" maxOccurs="1"/>
@@ -720,7 +690,6 @@
                         <complexType>
                             <sequence>
                                 <element name="UserDomainID" type="anyURI" minOccurs="0" maxOccurs="1"/>
-                                <element name="ComputingEndpointID" type="anyURI" minOccurs="0" maxOccurs="1"/> <!-- Redudnant? -->
                                 <element name="ComputingShareID" type="anyURI" minOccurs="0" maxOccurs="1"/>
                                 <element name="ExecutionEnvironmentID" type="anyURI" minOccurs="0" maxOccurs="1"/>
                                 <element name="ActivityID" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
@@ -888,9 +857,24 @@
     <!--  END STORAGE ENTITIES  -->
 
     <!-- BEGIN DATA TYPES -->
+    <simpleType name="BenchmarkType_t">
+        <restriction base="xs:string">
+    <annotation>
+        <appinfo>
+            <enumeration value="bogomips"/>
+            <enumeration value="cfp2006"/>
+            <enumeration value="cint2006"/>
+            <enumeration value="linpack"/>
+            <enumeration value="specfp2000"/>
+            <enumeration value="specint2000"/>
+        </appinfo>
+    </annotation> 
+            </restriction>
+    </simpleType>
+    
     <simpleType name="dateTime">
         <restriction base="xs:dateTime">
-            <pattern value="\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d[+\-]\d\d:\d\dZ"/>
+            <pattern value="\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ"/>
         </restriction>
     </simpleType>
 
