@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- OGF GLUE 2.0 - XML Schema mapping  
+<!-- OGF GLUE 2.0 - XML Schema mapping
     Release: 31 Mar 2011
-    
-    Copyright (c) 2011 
+
+    Copyright (c) 2011
 
     Sergio Andreozzi (EGI.eu)
     Balazs Konya (Lund University)
     Shiraz Memon (Forschungszentrum Juelich GmbH)
     Paul Millar (DESY)
     Adrian Taga (Oslo University)
-    
+
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
-    
+
     http://www.apache.org/licenses/LICENSE-2.0
-    
+
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
-    limitations under the License.              
+    limitations under the License.
 -->
 
 <schema targetNamespace="http://schemas.ogf.org/glue/2009/03/spec_2.0_r1" xmlns="http://www.w3.org/2001/XMLSchema"
@@ -278,7 +278,7 @@
         </complexContent>
     </complexType>
 
-    <!-- consider to remove it TODO 
+    <!-- consider to remove it TODO
     <complexType abstract="true" name="Resource_t">
         <complexContent>
             <extension base="glue:ResourceBase_t">
@@ -677,7 +677,7 @@
 
     <!-- PAUL todo: when adding StorageManager, add the follogin attributes
     <element name="ProductName" type="glue:StorageManagerType_t" minOccurs="1" maxOccurs="1"/>
-    <element name="ProductVersion" type="string" minOccurs="0" maxOccurs="1"/> 
+    <element name="ProductVersion" type="string" minOccurs="0" maxOccurs="1"/>
     -->
 
     <complexType name="StorageService_t">
