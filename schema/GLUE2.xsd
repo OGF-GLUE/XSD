@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--     OGF GLUE 2.0 - XML Schema mapping  
-    Updated to draft 34 of GLUE Specification
-    Release: 10 Apr 2009
+    Release: 1 Apr 2011
     
-    Copyright 2008 Istituto Nazionale di Fisica Nucleare http://www.infn.it
-    Authors: Sergio Andreozzi, Michele Carpene', Marco Canaparo
-    {sergio.andreozzi,marco.canaparo,michele.carpene}@cnaf.infn.it
-    Institution: INFN - Italy
+    Copyright (c) 2011
     
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -21,12 +17,43 @@
     limitations under the License.              
 -->
 
-<schema targetNamespace="http://schemas.ogf.org/glue/2009/03/spec/2/0"
+<schema targetNamespace="http://schemas.ogf.org/glue/2009/03/spec_2.0_r1"
     xmlns="http://www.w3.org/2001/XMLSchema"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:glue="http://schemas.ogf.org/glue/2009/03/spec/2/0">
+    xmlns:glue="http://schemas.ogf.org/glue/2009/03/spec_2.0_r1"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
 
-    <!-- BEGIN AUXILIARIES ENTITIES -->
+    <element name="Domains" type="glue:Domains_t"/>
+    <element name="Domain" type="glue:Domain_t"/>
+    <element name="Location" type="glue:Location_t"/>
+    <element name="Contact" type="glue:Contact_t"/>
+    <element name="AdminDomain" type="glue:AdminDomain_t"/>
+    <element name="UserDomain" type="glue:UserDomain_t"/>
+    
+    <element name="Service" type="glue:Service_t"/>
+    <element name="ComputingService" type="glue:ComputingService_t"/>
+    <element name="StorageService" type="glue:StorageService_t"/>
+    
+    <element name="Extension" type="glue:Extension_t"/>
+    <element name="Extensions" type="glue:Extensions_t"/>
+    
+    
+    <element name="Activity" type="glue:Activity_t"/>
+    <element name="ActivityBase" type="glue:ActivityBase_t"/>
+ 
+
+    <element name="Type" type="glue:ServiceType_t"/>
+    <element name="Benchmark" type="glue:Benchmark_t"/>
+    
+    <element name="Entity" type="glue:Entity"/>
+    
+    <element name="Policy" type="glue:Policy_t"/>
+    <element name="MappingPolicy" type="glue:MappingPolicy_t"/>
+    <element name="AccessPolicy" type="glue:AccessPolicy_t"/>
+
+    <element name="Staging" type="glue:Staging_t"/>
+
+    <!-- BEGIN MAIN ENTITIES -->
     <complexType name="Extension_t">
         <sequence>
             <element name="LocalID" type="glue:LocalID_t" minOccurs="1" maxOccurs="1"/>
@@ -40,7 +67,6 @@
             <element name="Extension" type="glue:Extension_t" minOccurs="0" maxOccurs="unbounded"/>
         </sequence>
     </complexType>
-    <!-- END AUXILIARIES ENTITIES -->
     
     <complexType abstract="true" name="Entity">
         <sequence>
@@ -52,9 +78,6 @@
         <attribute name="CreationTime" type="glue:dateTime"/>
         <attribute name="Validity" type="unsignedLong"/>
     </complexType>
-
-    <!-- BEGIN MAIN ENTITIES -->
-    <element name="Domains" type="glue:Domains_t"/>
 
     <complexType name="Domains_t">
         <sequence>
@@ -116,18 +139,12 @@
         <complexContent>
             <extension base="glue:Domain_t">
                 <sequence>
-                    <element name="Distributed" type="boolean" minOccurs="0" maxOccurs="1"/>
+                    <element name="Distributed" type="glue:ExtendedBoolean_t" minOccurs="0" maxOccurs="1"/>
                     <element name="Owner" type="string" minOccurs="0" maxOccurs="unbounded"/>
-                    <element name="Services" minOccurs="0" maxOccurs="1">
-                        <complexType>
-                            <sequence>
-                                <element name="Service" type="glue:Service_t" minOccurs="0" maxOccurs="unbounded"/>
-                                <element name="ComputingService" type="glue:ComputingService_t" minOccurs="0" maxOccurs="unbounded"/>
-                                <element name="StorageService" type="glue:StorageService_t" minOccurs="0" maxOccurs="unbounded"/>
-                            </sequence>                            
-                        </complexType>
-                    </element>
-                    <!-- <element name="AdminDomain" type="glue:AdminDomain_t" minOccurs="0" maxOccurs="unbounded"/> -->
+                    <element ref="glue:Service" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="glue:ComputingService" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="glue:StorageService" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="glue:AdminDomain" minOccurs="0" maxOccurs="unbounded"/>
                 </sequence>
             </extension>
         </complexContent>
@@ -140,7 +157,7 @@
                     <element name="Level" type="unsignedInt" minOccurs="0" maxOccurs="1"/>
                     <element name="UserManager" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
                     <element name="Member" type="string" minOccurs="0" maxOccurs="unbounded"/>
-                    <!-- <element name="UserDomain" type="glue:UserDomain_t" minOccurs="0" maxOccurs="unbounded"/> -->
+                    <element ref="glue:UserDomain" minOccurs="0" maxOccurs="unbounded"/>
                 </sequence>
             </extension>
         </complexContent>
@@ -155,8 +172,8 @@
                     <element name="QualityLevel" type="glue:QualityLevel_t" minOccurs="1" maxOccurs="1"/>
                     <element name="StatusInfo" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
                     <element name="Complexity" type="string" minOccurs="0" maxOccurs="1"/>
-                    <element name="Location" type="glue:Location_t" minOccurs="0" maxOccurs="1"/>
-                    <element name="Contact" type="glue:Contact_t" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="glue:Location" minOccurs="0" maxOccurs="1"/>
+                    <element ref="glue:Contact" minOccurs="0" maxOccurs="unbounded"/>
                 </sequence>
                 <attribute name="BaseType" fixed="Service" use="required"/>
             </extension>
@@ -187,7 +204,15 @@
                     <element name="URL" type="anyURI" minOccurs="1" maxOccurs="1"/>
                     <element name="Capability" type="glue:Capability_t" minOccurs="0" maxOccurs="unbounded"/>
                     <element name="Technology" type="glue:EndpointTechnology_t" minOccurs="0" maxOccurs="1"/>
-                    <element name="InterfaceName" type="string" minOccurs="1" maxOccurs="1"/>
+                    <element name="InterfaceName" type="string" minOccurs="1" maxOccurs="1">
+                            <annotation>
+                                <appinfo>
+                                    <enumeration value="ogf.bes"/>
+                                    <enumeration value="ogf.srm"/>
+                                    <enumeration value="emi.executionservice"/>
+                                </appinfo>
+                            </annotation>
+                    </element>  
                     <element name="InterfaceVersion" type="string" minOccurs="0" maxOccurs="unbounded"/>
                     <element name="InterfaceExtension" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
                     <element name="WSDL" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
@@ -242,23 +267,8 @@
         </complexContent>
     </complexType>
 
-    <complexType abstract="true" name="Share_t">
-        <complexContent>
-            <extension base="glue:ShareBase_t">
-                <sequence>
-                    <element name="Associations" minOccurs="0" maxOccurs="1">
-                        <complexType>
-                            <sequence>
-                                <element name="ActivityID" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
-                                <element name="EndpointID" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
-                            </sequence>
-                        </complexType>
-                    </element>
-                </sequence>
-            </extension>
-        </complexContent>
-    </complexType>
-
+    <!-- Share_t is not defined because it is an abstract entity -->
+  
     <complexType abstract="true" name="Manager_t">
         <complexContent>
             <extension base="glue:Entity">
@@ -280,7 +290,8 @@
             </extension>
         </complexContent>
     </complexType>
-
+     
+     <!-- consider to remove it TODO 
     <complexType abstract="true" name="Resource_t">
         <complexContent>
             <extension base="glue:ResourceBase_t">
@@ -297,6 +308,8 @@
         </complexContent>
     </complexType>
 
+     -->
+    
     <complexType abstract="true" name="ActivityBase_t">
         <complexContent>
             <extension base="glue:Entity">
@@ -315,7 +328,6 @@
                         <complexType>
                             <sequence>
                                 <element name="UserDomainID" type="anyURI" minOccurs="0" maxOccurs="1"/>
-                                <element name="EndpointID" type="anyURI" minOccurs="0" maxOccurs="1"/>
                                 <element name="ActivityID" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
                             </sequence>
                         </complexType>
@@ -803,7 +815,7 @@
 
     <complexType name="StorageResource_t">
         <complexContent>
-            <extension base="glue:Resource_t">
+            <extension base="glue:ResourceBase_t">
                 <sequence>
                     <element name="ImplementationName" type="string" minOccurs="0"/>
                     <element name="ImplementationVersion" type="string" minOccurs="0"/>
@@ -878,7 +890,7 @@
     <!-- BEGIN DATA TYPES -->
     <simpleType name="dateTime">
         <restriction base="xs:dateTime">
-            <pattern value="\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ"/>
+            <pattern value="\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d[+\-]\d\d:\d\dZ"/>
         </restriction>
     </simpleType>
 
