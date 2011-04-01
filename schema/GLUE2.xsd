@@ -37,6 +37,8 @@
     <element name="Service" type="glue:Service_t"/>
     <element name="ComputingService" type="glue:ComputingService_t"/>
     <element name="StorageService" type="glue:StorageService_t"/>
+    <element name="ToComputingService" type="glue:ToComputingService_t"/>
+    <element name="StorageManager" type="glue:StorageManager_t"/>
     <element name="ComputingActivity" type="glue:ComputingActivity_t"/>
     <element name="ComputingActivities">
         <complexType>
