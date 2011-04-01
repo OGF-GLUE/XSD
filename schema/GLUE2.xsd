@@ -693,7 +693,9 @@
 	        Storage Access Protocols, and provides summary
 	        information about the overall amount of storage by
 	        means of the Storage Service Capacity.
-		<p/>
+	    </documentation>
+
+	    <documentation>
 		The Storage Service is autonomous and denotes a weak
 		aggregation among Storage Endpoints, Storage Shares,
 		Storage Managers, Storage Access Protocols and Storage
@@ -733,7 +735,7 @@
 	    </documentation>
 	</annotation>
         <complexContent>
-            <extension base="glue:Entity">
+            <extension base="glue:Entity_t">
                 <sequence>
 		    <element name="Type" type="glue:StorageCapacity_t"/>
 		    <element name="TotalSize" type="unsignedLong" minOccurs="0"/>
@@ -754,7 +756,7 @@
 	    </documentation>
         </annotation>
         <sequence>
-            <element name="Type" type="StorageAccessProtocol_t"/>
+            <element name="Type" type="glue:StorageAccessProtocolType_t"/>
             <element name="Version" type="string"/>
             <element name="MaxStreams" type="int" minOccurs="0"/>
 	    <element name="Associations" minOccurs="0">
@@ -837,7 +839,7 @@
 	    </documentation>
 	</annotation>
 	<complexContent>
-	    <extension base="glue:Entity">
+	    <extension base="glue:Entity_t">
 	        <sequence>
 		    <element name="Type" type="glue:StorageCapacity_t"/>
 		    <element name="TotalSize" type="int" minOccurs="0"/>
@@ -865,7 +867,9 @@
 		  <element name="ProductVersion" type="string" minOccurs="0"/>
                     <element name="Associations" minOccurs="0">
 		        <complexType>
-			    <element name="DataStoreID" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
+			    <sequence>
+			        <element name="DataStoreID" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
+			    </sequence>
 			</complexType>
 		    </element>
                 </sequence>
@@ -887,7 +891,7 @@
 	    </documentation>
 	</annotation>
 	<complexContent>
-	    <extension base="glue:Resource_t">
+	    <extension base="glue:ResourceBase_t">
 	        <sequence>
 		    <element name="Type" type="DataStoreType_t"/>
 		    <element name="Latency" type="AccessLatency_t"/>
@@ -918,7 +922,7 @@
 	    </documentation>
 	</annotation>
 	<complexContent>
-	    <extension base="glue:Entity">
+	    <extension base="glue:Entity_t">
 	        <sequence>
 		    <element name="NetworkInfo" type="NetworkInfo_t" minOccurs="0"/>
 		    <element name="Bandwidth" type="int" minOccurs="0"/>
@@ -1416,19 +1420,19 @@
         <restriction base="string">
             <annotation>
                 <appinfo>
-                    <enumeration>afs</enumeration>
-                    <enumeration>dcap</enumeration>
-                    <enumeration>file</enumeration>
-                    <enumeration>gsidcap</enumeration>
-                    <enumeration>gsiftp</enumeration>
-                    <enumeration>gsirfio</enumeration>
-                    <enumeration>http</enumeration>
-                    <enumeration>https</enumeration>
-                    <enumeration>nfs</enumeration>
-                    <enumeration>rfio</enumeration>
-                    <enumeration>root</enumeration>
-                    <enumeration>xrootd</enumeration>
-                    <enumeration>uftp</enumeration>
+                    <enumeration value="afs"/>
+                    <enumeration value="dcap"/>
+                    <enumeration value="file"/>
+                    <enumeration value="gsidcap"/>
+                    <enumeration value="gsiftp"/>
+                    <enumeration value="gsirfio"/>
+                    <enumeration value="http"/>
+                    <enumeration value="https"/>
+                    <enumeration value="nfs"/>
+                    <enumeration value="rfio"/>
+                    <enumeration value="root"/>
+                    <enumeration value="xrootd"/>
+                    <enumeration value="uftp"/>
                 </appinfo>
             </annotation>
         </restriction>
@@ -1527,39 +1531,6 @@
 		</appinfo>
 	    </annotation>
         </restriction>
-    </simpleType>
-
-    <simpleType name="StorageAccessProtocol_t">
-        <restriction base="string">
-	    <annotation>
-	        <appinfo>
-		  <enumeration value="afs"/>
-		  <enumeration value="dcap"/>
-		  <enumeration value="file"/>
-		  <enumeration value="gsidcap"/>
-		  <enumeration value="gsiftp"/>
-		  <enumeration value="gsirfio"/>
-		  <enumeration value="http"/>
-		  <enumeration value="https"/>
-		  <enumeration value="nfs"/>
-		  <enumeration value="rfio"/>
-		  <enumeration value="root"/>
-		  <enumeration value="xrootd"/>
-		</appinfo>
-	    </annotation>
-	</restriction>
-    </simpleType>
-
-    <simpleType name="DataStoreType_t">
-        <restriction base="string">
-	    <annotation>
-	        <appinfo>
-		  <enumeration value="disk"/>
-		  <enumeration value="optical"/>
-		  <enumeration value="tape"/>
-		</appinfo>
-	    </annotation>
-	</restriction>
     </simpleType>
 
     <!-- END DATA TYPES -->
