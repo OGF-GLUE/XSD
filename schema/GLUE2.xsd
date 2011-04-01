@@ -929,7 +929,7 @@
                 <sequence>
                     <element name="ProductName" type="string"/>
                     <element name="ProductVersion" type="string" minOccurs="0"/>
-                    <element name="DataStore" type="DataStore_t" minOccurs="0" maxOccurs="unbounded"/>
+                    <element name="DataStore" type="glue:DataStore_t" minOccurs="0" maxOccurs="unbounded"/>
                 </sequence>
             </extension>
         </complexContent>
@@ -958,8 +958,8 @@
         <complexContent>
             <extension base="glue:ResourceBase_t">
                 <sequence>
-                    <element name="Type" type="DataStoreType_t"/>
-                    <element name="Latency" type="AccessLatency_t"/>
+                    <element name="Type" type="glue:DataStoreType_t"/>
+                    <element name="Latency" type="glue:AccessLatency_t"/>
                     <element name="TotalSize" type="int" minOccurs="0"/>
                     <element name="FreeSize" type="int" minOccurs="0"/>
                     <element name="UsedSize" type="int" minOccurs="0"/>
@@ -994,7 +994,7 @@
         <complexContent>
             <extension base="glue:Entity_t">
                 <sequence>
-                    <element name="NetworkInfo" type="NetworkInfo_t" minOccurs="0"/>
+                    <element name="NetworkInfo" type="glue:NetworkInfo_t" minOccurs="0"/>
                     <element name="Bandwidth" type="int" minOccurs="0"/>
                     <element name="Associations" minOccurs="1">
                         <complexType>
