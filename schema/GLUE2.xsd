@@ -25,7 +25,9 @@
 
 <schema targetNamespace="http://schemas.ogf.org/glue/2009/03/spec_2.0_r1" xmlns="http://www.w3.org/2001/XMLSchema"
         xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:glue="http://schemas.ogf.org/glue/2009/03/spec_2.0_r1"
-        elementFormDefault="qualified" attributeFormDefault="unqualified">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        elementFormDefault="qualified"
+        attributeFormDefault="unqualified">
 
     <element name="Domains" type="glue:Domains_t"/>
     <element name="AdminDomain" type="glue:AdminDomain_t"/>
@@ -679,33 +681,61 @@
 
     <complexType name="StorageService_t">
         <annotation>
-            <documentation xml:lang="en">
-                An abstracted, logical view of software and hardware
-                components that participate in the creation of a
-                storage capability in a Grid environment. A Storage
-                Service exposes zero or more Endpoints having
-                well-defined interfaces, zero or more Storage Shares
-                and zero or more Storage Managers and the related Data
-                Stores.  The Storage Service also offers zero or more
-                Storage Access Protocols, and provides summary
-                information about the overall amount of storage by
-                means of the Storage Service Capacity.
-            </documentation>
-
-            <documentation>
-                The Storage Service is autonomous and denotes a weak
-                aggregation among Storage Endpoints, Storage Shares,
-                Storage Managers, Storage Access Protocols and Storage
-                Service Capacities. The Storage Service enables the
-                identification of the entire set of entities providing
-                storage functionality with a persistent name.
+            <documentation source="http://www.ogf.org/documents/GFD.147.pdf#page=44"
+                           xml:lang="en">
+                <xhtml:div>
+                    <xhtml:p>
+                        An abstracted, logical view of software and
+                        hardware components that participate in the
+                        creation of a storage capability in a Grid
+                        environment. A Storage Service exposes zero or
+                        more Endpoints having well-defined interfaces,
+                        zero or more Storage Shares and zero or more
+                        Storage Managers and the related Data Stores.
+                        The Storage Service also offers zero or more
+                        Storage Access Protocols, and provides summary
+                        information about the overall amount of
+                        storage by means of the Storage Service
+                        Capacity.
+                    </xhtml:p>
+                    <xhtml:p>
+                        The Storage Service is autonomous and denotes
+                        a weak aggregation among Storage Endpoints,
+                        Storage Shares, Storage Managers, Storage
+                        Access Protocols and Storage Service
+                        Capacities. The Storage Service enables the
+                        identification of the entire set of entities
+                        providing storage functionality with a
+                        persistent name.
+                  </xhtml:p>
+                </xhtml:div>
             </documentation>
         </annotation>
         <complexContent>
             <extension base="glue:ServiceBase_t">
                 <sequence>
-                    <element name="StorageEndpoint" type="glue:StorageEndpoint_t" minOccurs="0" maxOccurs="unbounded"/>
-                    <element name="StorageShare" type="glue:StorageShare_t" minOccurs="0" maxOccurs="unbounded"/>
+                    <element name="StorageEndpoint" type="glue:StorageEndpoint_t" minOccurs="0" maxOccurs="unbounded">
+                        <annotation>
+                            <documentation xml:lang="en">
+                                <xhtml:div>
+                                    <xhtml:p>
+                                        A storage service exposes zero or more storage endpoints.
+                                    </xhtml:p>
+                                </xhtml:div>
+                            </documentation>
+                        </annotation>
+                    </element>
+                    <element name="StorageShare" type="glue:StorageShare_t" minOccurs="0" maxOccurs="unbounded">
+                        <annotation>
+                            <documentation xml:lang="en">
+                                <xhtml:div>
+                                    <xhtml:p>
+                                        A storage service serves zero or more storage shares.
+                                    </xhtml:p>
+                                </xhtml:div>
+                            </documentation>
+                        </annotation>
+                    </element>
                     <element name="StorageManager" type="glue:StorageManager_t" minOccurs="0" maxOccurs="unbounded"/>
                     <element name="StorageAccessProtocol" type="glue:StorageAccessProtocol_t" minOccurs="0" maxOccurs="unbounded"/>
                     <element name="StorageServiceCapacity" type="glue:StorageServiceCapacity_t" minOccurs="0" maxOccurs="unbounded"/>
@@ -725,10 +755,16 @@
 
     <complexType name="StorageServiceCapacity_t">
         <annotation>
-            <documentation xml:lang="en">
-                Description of the size and usage of a homogenous
-                storage extent; the storage extent is aggregated at
-                the storage service level by type.
+            <documentation source="http://www.ogf.org/documents/GFD.147.pdf#Page=45"
+                           xml:lang="en">
+                <xhtml:div>
+                    <xhtml:p>
+                        Description of the size and usage of a
+                        homogenous storage extent; the storage extent
+                        is aggregated at the storage service level by
+                        type.
+                  </xhtml:p>
+                </xhtml:div>
             </documentation>
         </annotation>
         <complexContent>
@@ -747,9 +783,14 @@
 
     <complexType name="StorageAccessProtocol_t">
         <annotation>
-            <documentation xml:lang="en">
-                A type of protocol available to access the underlying
-                storage extents.
+            <documentation source="http://www.ogf.org/documents/GFD.147.pdf#Page=46"
+                           xml:lang="en">
+                <xhtml:div>
+                    <xhtml:p>
+                        A type of protocol available to access the
+                        underlying storage extents.
+                  </xhtml:p>
+                </xhtml:div>
             </documentation>
         </annotation>
         <sequence>
@@ -769,11 +810,17 @@
 
     <complexType name="StorageEndpoint_t">
         <annotation>
-            <documentation xml:lang="en">
-              An Endpoint usable for managing Storage Shares or for
-              accessing data stored in them; it MAY also be used to
-              expose complementary capabilities which form part of the
-              overall Storage Service.
+            <documentation source="http://www.ogf.org/documents/GFD.147.pdf#Page=47"
+                           xml:lang="en">
+                <xhtml:div>
+                    <xhtml:p>
+                        An Endpoint usable for managing Storage Shares
+                        or for accessing data stored in them; it MAY
+                        also be used to expose complementary
+                        capabilities which form part of the overall
+                        Storage Service.
+                  </xhtml:p>
+                </xhtml:div>
             </documentation>
         </annotation>
         <complexContent>
@@ -794,10 +841,16 @@
 
     <complexType name="StorageShare_t">
         <annotation>
-          <documentation xml:lang="en">
-              A utilization target for a set of extents in Data
-              Stores, defined by a set of configuration parameters and
-              policies and characterized by status information.
+          <documentation source="http://www.ogf.org/documents/GFD.147.pdf#Page=48"
+                         xml:lang="en">
+                <xhtml:div>
+                    <xhtml:p>
+                        A utilization target for a set of extents in
+                        Data Stores, defined by a set of configuration
+                        parameters and policies and characterized by
+                        status information.
+                    </xhtml:p>
+                </xhtml:div>
           </documentation>
         </annotation>
         <complexContent>
@@ -830,9 +883,15 @@
 
     <complexType name="StorageShareCapacity_t">
         <annotation>
-            <documentation xml:lang="en">
-                A description of the size and usage of a homogenous
-                storage extent available to a Storage Share.
+            <documentation source="http://www.ogf.org/documents/GFD.147.pdf#Page=50"
+                           xml:lang="en">
+                <xhtml:div>
+                    <xhtml:p>
+                        A description of the size and usage of a
+                        homogenous storage extent available to a
+                        Storage Share.
+                    </xhtml:p>
+                </xhtml:div>
             </documentation>
         </annotation>
         <complexContent>
@@ -851,10 +910,16 @@
 
     <complexType name="StorageManager_t">
         <annotation>
-            <documentation xml:lang="en">
-              The primary software component locally managing one or
-              more Data Stores. It MAY also be used to describe
-              aggregated information about the managed resources.
+            <documentation source="http://www.ogf.org/documents/GFD.147.pdf#Page=51"
+                           xml:lang="en">
+                <xhtml:div>
+                    <xhtml:p>
+                        The primary software component locally
+                        managing one or more Data Stores. It MAY also
+                        be used to describe aggregated information
+                        about the managed resources.
+                    </xhtml:p>
+                </xhtml:div>
             </documentation>
         </annotation>
         <complexContent>
@@ -877,14 +942,21 @@
 
     <complexType name="DataStore_t">
         <annotation>
-            <documentation xml:lang="en">
-                An abstract description of a sufficiently homogeneous
-                storage device providing a storage extent, managed by
-                a local software component (Storage Manager), part of
-                a Storage Service, reachable via zero or more
-                Endpoints and having zero or more Shares defined on
-                it. A Data Store refers to a category of storage with
-                summary information on the storage capacity.
+            <documentation source="http://www.ogf.org/documents/GFD.147.pdf#Page=51"
+                           xml:lang="en">
+                <xhtml:div>
+                    <xhtml:p>
+                        An abstract description of a sufficiently
+                        homogeneous storage device providing a storage
+                        extent, managed by a local software component
+                        (Storage Manager), part of a Storage Service,
+                        reachable via zero or more Endpoints and
+                        having zero or more Shares defined on it. A
+                        Data Store refers to a category of storage
+                        with summary information on the storage
+                        capacity.
+                    </xhtml:p>
+                </xhtml:div>
             </documentation>
         </annotation>
         <complexContent>
@@ -910,12 +982,17 @@
 
     <complexType name="ToComputingService_t">
         <annotation>
-            <documentation xml:lang="en">
-                A description of the network link quality between a
-                Storage Service and a computing service, and/or of a
-                potentially dedicated access protocol that the
-                Computing Service may use to access the Storage
-                Service.
+            <documentation source="http://www.ogf.org/documents/GFD.147.pdf#Page=52"
+                           xml:lang="en">
+                <xhtml:div>
+                    <xhtml:p>
+                        A description of the network link quality
+                        between a Storage Service and a computing
+                        service, and/or of a potentially dedicated
+                        access protocol that the Computing Service may
+                        use to access the Storage Service.
+                    </xhtml:p>
+                </xhtml:div>
             </documentation>
         </annotation>
         <complexContent>
