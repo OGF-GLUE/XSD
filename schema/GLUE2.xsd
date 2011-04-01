@@ -24,8 +24,8 @@
 -->
 
 <schema targetNamespace="http://schemas.ogf.org/glue/2009/03/spec_2.0_r1" xmlns="http://www.w3.org/2001/XMLSchema"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:glue="http://schemas.ogf.org/glue/2009/03/spec_2.0_r1" elementFormDefault="qualified"
-    attributeFormDefault="unqualified">
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:glue="http://schemas.ogf.org/glue/2009/03/spec_2.0_r1"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
 
     <element name="Domains" type="glue:Domains_t"/>
     <element name="AdminDomain" type="glue:AdminDomain_t"/>
@@ -676,9 +676,6 @@
 
 
     <!--  BEGIN STORAGE ENTITIES  -->
-
-    <!-- PAUL todo: when adding StorageManager, add the follogin attributes
-    -->
 
     <complexType name="StorageService_t">
         <annotation>
@@ -1438,18 +1435,18 @@
         </restriction>
     </simpleType>
 
-    <simpleType name="StorageCapacityType_t">
+    <simpleType name="StorageCapacity_t">
         <restriction base="string">
             <annotation>
-                <appinfo>
-                    <enumeration value="online"/>
-                    <enumeration value="installedonline"/>
-                    <enumeration value="nearline"/>
-                    <enumeration value="installednearline"/>
-                    <enumeration value="offline"/>
-                    <enumeration value="cache"/>
-                </appinfo>
-            </annotation>
+	        <appinfo>
+	            <enumeration value="online"/>
+	            <enumeration value="installedonline"/>
+	            <enumeration value="nearline"/>
+	            <enumeration value="installednearline"/>
+	            <enumeration value="offline"/>
+	            <enumeration value="cache"/>
+		</appinfo>
+	    </annotation>
         </restriction>
     </simpleType>
 
@@ -1517,21 +1514,6 @@
         </restriction>
     </simpleType>
     <!-- END: PROBABLY TO DISAPPEAR -->
-
-    <simpleType name="StorageCapacity_t">
-        <restriction base="string">
-            <annotation>
-	        <appinfo>
-	            <enumeration value="online"/>
-	            <enumeration value="installedonline"/>
-	            <enumeration value="nearline"/>
-	            <enumeration value="installednearline"/>
-	            <enumeration value="offline"/>
-	            <enumeration value="cache"/>
-		</appinfo>
-	    </annotation>
-        </restriction>
-    </simpleType>
 
     <!-- END DATA TYPES -->
 
