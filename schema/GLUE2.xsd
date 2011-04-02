@@ -22,7 +22,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-
+<?xml-stylesheet href="xs3p.xsl" type="text/xsl"?>
 <schema targetNamespace="http://schemas.ogf.org/glue/2009/03/spec_2.0_r1" xmlns="http://www.w3.org/2001/XMLSchema"
         xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:glue="http://schemas.ogf.org/glue/2009/03/spec_2.0_r1"
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
