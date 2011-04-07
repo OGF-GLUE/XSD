@@ -1565,29 +1565,6 @@
     </simpleType>
 
 
-
-
-    <!-- PAUL BEGIN: PROBABLY TO DISAPPEAR -->
-    <simpleType name="SetupMethod_t">
-        <restriction base="string">
-            <enumeration value="default"/>
-            <enumeration value="setenv"/>
-        </restriction>
-    </simpleType>
-
-    <simpleType name="ExecEnv_t">
-        <restriction base="string"> </restriction>
-    </simpleType>
-
-    <simpleType name="StorageEnvironmentType_t">
-        <restriction base="string">
-            <enumeration value="volatile"/>
-            <enumeration value="durable"/>
-            <enumeration value="permanent"/>
-        </restriction>
-    </simpleType>
-    <!-- END: PROBABLY TO DISAPPEAR -->
-
     <!-- END DATA TYPES -->
 
 </schema>
