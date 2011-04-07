@@ -826,17 +826,7 @@
             </documentation>
         </annotation>
         <complexContent>
-            <extension base="glue:EndpointBase_t">
-                <sequence>
-                    <element name="Associations" minOccurs="0">
-                        <complexType>
-                            <sequence>
-                                <element name="StorageShareID" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
-                            </sequence>
-                        </complexType>
-                    </element>
-                </sequence>
-            </extension>
+            <extension base="glue:EndpointBase_t"/>
         </complexContent>
     </complexType>
 
@@ -963,13 +953,6 @@
                     <element name="TotalSize" type="int" minOccurs="0"/>
                     <element name="FreeSize" type="int" minOccurs="0"/>
                     <element name="UsedSize" type="int" minOccurs="0"/>
-                    <element name="Associations" minOccurs="0">
-                        <complexType>
-                            <sequence>
-                                <element name="StorageShareID" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
-                            </sequence>
-                        </complexType>
-                    </element>
                 </sequence>
             </extension>
         </complexContent>
@@ -999,7 +982,6 @@
                     <element name="Associations" minOccurs="1">
                         <complexType>
                             <sequence>
-                                <element name="StorageAccessProtocolID" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
                                 <element name="ComputingServiceID" type="anyURI" minOccurs="1"/>
                             </sequence>
                         </complexType>
