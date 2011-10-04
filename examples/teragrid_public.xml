@@ -1,0 +1,250 @@
+<glue2 Timestamp="2011-10-04T10:15:03Z" UniqueID="glue2.queenbee.loni-lsu.teragrid.org" xmlns="" xmlns:ns1="http://info.teragrid.org/glue/2009/02/spec_2.0_r01">
+    <ResourceID>queenbee.loni-lsu.teragrid.org</ResourceID>
+    <SiteID>loni-lsu.teragrid.org</SiteID>
+    <Entities xmlns="http://info.teragrid.org/glue/2009/02/spec_2.0_r01">
+      <ComputingService CreationTime="2011-10-04T10:15:03Z" Validity="300">
+        <ID>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingService/PBS-Moab</ID>
+        <Name>PBS-Moab</Name>
+        <Capability>executionmanagement.jobexecution</Capability>
+        <Capability>executionmanagement.jobdescription</Capability>
+        <Capability>executionmanagement.jobmanager</Capability>
+        <Capability>executionmanagement.executionandplanning</Capability>
+        <Capability>executionmanagement.reservation</Capability>
+        <Type>org.teragrid.Pbs-Moab</Type>
+        <QualityLevel>production</QualityLevel>
+        <TotalJobs>24</TotalJobs>
+        <RunningJobs>24</RunningJobs>
+        <WaitingJobs>0</WaitingJobs>
+        <SuspendedJobs>0</SuspendedJobs>
+        <ComputingEndpoint>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingEndpoint/ws-gram/PBS</ComputingEndpoint>
+        <ComputingEndpoint>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingEndpoint/prews-gram-fork</ComputingEndpoint>
+        <ComputingEndpoint>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingEndpoint/prews-gram-pbs</ComputingEndpoint>
+        <ComputingEndpoint>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingEndpoint/ws-gram/Fork</ComputingEndpoint>
+        <ComputingShare>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingShare/priority</ComputingShare>
+        <ComputingShare>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingShare/workq</ComputingShare>
+        <ComputingShare>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingShare/preempt</ComputingShare>
+        <ComputingShare>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingShare/checkpt</ComputingShare>
+        <ComputingShare>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingShare/admin</ComputingShare>
+        <ComputingManager>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingManager/PBS</ComputingManager>
+      </ComputingService>
+      <ComputingEndpoint CreationTime="2011-10-04T10:15:03Z" Validity="300">
+        <ID>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingEndpoint/ws-gram/PBS</ID>
+        <Name>ws-gram/PBS</Name>
+        <URL>https://grid-qb.loni-lsu.teragrid.org:8443/wsrf/services/ManagedJobFactoryService</URL>
+        <Capability>executionmanagement.jobdescription</Capability>
+        <Capability>executionmanagement.jobexecution</Capability>
+        <Capability>executionmanagement.jobmanager</Capability>
+        <Technology>webservice</Technology>
+        <InterfaceName>globus.ws-gram</InterfaceName>
+        <Implementor>The Globus Alliance</Implementor>
+        <ImplementationName>ws-gram</ImplementationName>
+        <ImplementationVersion>4.0.8</ImplementationVersion>
+        <QualityLevel>production</QualityLevel>
+        <IssuerCA>/C=US/O=National Center for Supercomputing Applications/OU=Certificate Authorities/CN=CACL</IssuerCA>
+        <TotalJobs>24</TotalJobs>
+        <RunningJobs>24</RunningJobs>
+        <WaitingJobs>0</WaitingJobs>
+        <SuspendedJobs>0</SuspendedJobs>
+        <ComputingService>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingService/PBS-Moab</ComputingService>
+      </ComputingEndpoint>
+      <ComputingEndpoint CreationTime="2011-10-04T10:15:03Z" Validity="300">
+        <ID>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingEndpoint/prews-gram-fork</ID>
+        <Name>prews-gram-fork</Name>
+        <URL>grid-qb.loni-lsu.teragrid.org:2120/jobmanager-fork</URL>
+        <Capability>executionmanagement.jobdescription</Capability>
+        <Capability>executionmanagement.jobexecution</Capability>
+        <Capability>executionmanagement.jobmanager</Capability>
+        <Technology>legacy</Technology>
+        <InterfaceName>globus.prews-gram</InterfaceName>
+        <Implementor>The Globus Alliance</Implementor>
+        <ImplementationName>prews-gram</ImplementationName>
+        <ImplementationVersion>4.0.8</ImplementationVersion>
+        <QualityLevel>production</QualityLevel>
+        <IssuerCA>/C=US/O=National Center for Supercomputing Applications/OU=Certificate Authorities/CN=CACL</IssuerCA>
+        <TotalJobs>24</TotalJobs>
+        <RunningJobs>24</RunningJobs>
+        <WaitingJobs>0</WaitingJobs>
+        <SuspendedJobs>0</SuspendedJobs>
+        <ComputingService>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingService/PBS-Moab</ComputingService>
+      </ComputingEndpoint>
+      <ComputingEndpoint CreationTime="2011-10-04T10:15:03Z" Validity="300">
+        <ID>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingEndpoint/prews-gram-pbs</ID>
+        <Name>prews-gram-pbs</Name>
+        <URL>grid-qb.loni-lsu.teragrid.org:2120/jobmanager-pbs</URL>
+        <Capability>executionmanagement.jobdescription</Capability>
+        <Capability>executionmanagement.jobexecution</Capability>
+        <Capability>executionmanagement.jobmanager</Capability>
+        <Technology>legacy</Technology>
+        <InterfaceName>globus.prews-gram</InterfaceName>
+        <Implementor>The Globus Alliance</Implementor>
+        <ImplementationName>prews-gram</ImplementationName>
+        <ImplementationVersion>4.0.8</ImplementationVersion>
+        <QualityLevel>production</QualityLevel>
+        <IssuerCA>/C=US/O=National Center for Supercomputing Applications/OU=Certificate Authorities/CN=CACL</IssuerCA>
+        <TotalJobs>24</TotalJobs>
+        <RunningJobs>24</RunningJobs>
+        <WaitingJobs>0</WaitingJobs>
+        <SuspendedJobs>0</SuspendedJobs>
+        <ComputingService>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingService/PBS-Moab</ComputingService>
+      </ComputingEndpoint>
+      <ComputingEndpoint CreationTime="2011-10-04T10:15:03Z" Validity="300">
+        <ID>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingEndpoint/ws-gram/Fork</ID>
+        <Name>ws-gram/Fork</Name>
+        <URL>https://grid-qb.loni-lsu.teragrid.org:8443/wsrf/services/ManagedJobFactoryService</URL>
+        <Capability>executionmanagement.jobdescription</Capability>
+        <Capability>executionmanagement.jobexecution</Capability>
+        <Capability>executionmanagement.jobmanager</Capability>
+        <Technology>webservice</Technology>
+        <InterfaceName>globus.ws-gram</InterfaceName>
+        <Implementor>The Globus Alliance</Implementor>
+        <ImplementationName>ws-gram</ImplementationName>
+        <ImplementationVersion>4.0.8</ImplementationVersion>
+        <QualityLevel>production</QualityLevel>
+        <IssuerCA>/C=US/O=National Center for Supercomputing Applications/OU=Certificate Authorities/CN=CACL</IssuerCA>
+        <TotalJobs>24</TotalJobs>
+        <RunningJobs>24</RunningJobs>
+        <WaitingJobs>0</WaitingJobs>
+        <SuspendedJobs>0</SuspendedJobs>
+        <ComputingService>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingService/PBS-Moab</ComputingService>
+      </ComputingEndpoint>
+      <ComputingShare CreationTime="2011-10-04T10:15:03Z" Validity="300">
+        <ID>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingShare/priority</ID>
+        <Name>priority</Name>
+        <Extension Key="AcceptingJobs">True</Extension>
+        <Extension Key="RunningJobs">True</Extension>
+        <MappingQueue>priority</MappingQueue>
+        <MaxWallTime>172800</MaxWallTime>
+        <MaxSlotsPerJob>128</MaxSlotsPerJob>
+        <TotalJobs>0</TotalJobs>
+        <RunningJobs>0</RunningJobs>
+        <LocalRunningJobs>0</LocalRunningJobs>
+        <WaitingJobs>0</WaitingJobs>
+        <LocalWaitingJobs>0</LocalWaitingJobs>
+        <SuspendedJobs>0</SuspendedJobs>
+        <LocalSuspendedJobs>0</LocalSuspendedJobs>
+        <UsedSlots>0</UsedSlots>
+        <RequestedSlots>0</RequestedSlots>
+        <ComputingService>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingService/PBS-Moab</ComputingService>
+      </ComputingShare>
+      <ComputingShare CreationTime="2011-10-04T10:15:03Z" Validity="300">
+        <ID>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingShare/workq</ID>
+        <Name>workq</Name>
+        <Extension Key="AcceptingJobs">True</Extension>
+        <Extension Key="RunningJobs">True</Extension>
+        <MappingQueue>workq</MappingQueue>
+        <MaxWallTime>172800</MaxWallTime>
+        <MaxSlotsPerJob>256</MaxSlotsPerJob>
+        <TotalJobs>4</TotalJobs>
+        <RunningJobs>4</RunningJobs>
+        <LocalRunningJobs>4</LocalRunningJobs>
+        <WaitingJobs>0</WaitingJobs>
+        <LocalWaitingJobs>0</LocalWaitingJobs>
+        <SuspendedJobs>0</SuspendedJobs>
+        <LocalSuspendedJobs>0</LocalSuspendedJobs>
+        <UsedSlots>136</UsedSlots>
+        <RequestedSlots>0</RequestedSlots>
+        <ComputingService>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingService/PBS-Moab</ComputingService>
+      </ComputingShare>
+      <ComputingShare CreationTime="2011-10-04T10:15:03Z" Validity="300">
+        <ID>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingShare/preempt</ID>
+        <Name>preempt</Name>
+        <Extension Key="AcceptingJobs">True</Extension>
+        <Extension Key="RunningJobs">True</Extension>
+        <MappingQueue>preempt</MappingQueue>
+        <MaxWallTime>172800</MaxWallTime>
+        <MaxSlotsPerJob>128</MaxSlotsPerJob>
+        <TotalJobs>0</TotalJobs>
+        <RunningJobs>0</RunningJobs>
+        <LocalRunningJobs>0</LocalRunningJobs>
+        <WaitingJobs>0</WaitingJobs>
+        <LocalWaitingJobs>0</LocalWaitingJobs>
+        <SuspendedJobs>0</SuspendedJobs>
+        <LocalSuspendedJobs>0</LocalSuspendedJobs>
+        <UsedSlots>0</UsedSlots>
+        <RequestedSlots>0</RequestedSlots>
+        <ComputingService>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingService/PBS-Moab</ComputingService>
+      </ComputingShare>
+      <ComputingShare CreationTime="2011-10-04T10:15:03Z" Validity="300">
+        <ID>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingShare/checkpt</ID>
+        <Name>checkpt</Name>
+        <Extension Key="AcceptingJobs">True</Extension>
+        <Extension Key="RunningJobs">True</Extension>
+        <MappingQueue>checkpt</MappingQueue>
+        <MaxWallTime>172800</MaxWallTime>
+        <MaxSlotsPerJob>256</MaxSlotsPerJob>
+        <TotalJobs>20</TotalJobs>
+        <RunningJobs>20</RunningJobs>
+        <LocalRunningJobs>20</LocalRunningJobs>
+        <WaitingJobs>0</WaitingJobs>
+        <LocalWaitingJobs>0</LocalWaitingJobs>
+        <SuspendedJobs>0</SuspendedJobs>
+        <LocalSuspendedJobs>0</LocalSuspendedJobs>
+        <UsedSlots>1624</UsedSlots>
+        <RequestedSlots>0</RequestedSlots>
+        <ComputingService>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingService/PBS-Moab</ComputingService>
+      </ComputingShare>
+      <ComputingShare CreationTime="2011-10-04T10:15:03Z" Validity="300">
+        <ID>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingShare/admin</ID>
+        <Name>admin</Name>
+        <Extension Key="AcceptingJobs">True</Extension>
+        <Extension Key="RunningJobs">True</Extension>
+        <MappingQueue>admin</MappingQueue>
+        <MaxWallTime>259200</MaxWallTime>
+        <TotalJobs>0</TotalJobs>
+        <RunningJobs>0</RunningJobs>
+        <LocalRunningJobs>0</LocalRunningJobs>
+        <WaitingJobs>0</WaitingJobs>
+        <LocalWaitingJobs>0</LocalWaitingJobs>
+        <SuspendedJobs>0</SuspendedJobs>
+        <LocalSuspendedJobs>0</LocalSuspendedJobs>
+        <UsedSlots>0</UsedSlots>
+        <RequestedSlots>0</RequestedSlots>
+        <ComputingService>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingService/PBS-Moab</ComputingService>
+      </ComputingShare>
+      <ComputingManager CreationTime="2011-10-04T10:15:03Z" Validity="300">
+        <ID>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingManager/PBS</ID>
+        <Name>PBS</Name>
+        <Reservation>true</Reservation>
+        <TotalPhysicalCPUs>5344</TotalPhysicalCPUs>
+        <TotalLogicalCPUs>5344</TotalLogicalCPUs>
+        <TotalSlots>5344</TotalSlots>
+        <SlotsUsedByLocalJobs>1760</SlotsUsedByLocalJobs>
+        <Homogeneity>false</Homogeneity>
+        <ComputingService>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingService/PBS-Moab</ComputingService>
+        <ExecutionEnvironment>http://queenbee.loni-lsu.teragrid.org/glue2/ExecutionEnvironment/NodeType1</ExecutionEnvironment>
+        <ExecutionEnvironment>http://queenbee.loni-lsu.teragrid.org/glue2/ExecutionEnvironment/NodeType2</ExecutionEnvironment>
+      </ComputingManager>
+      <ExecutionEnvironment CreationTime="2011-10-04T10:15:03Z" Validity="300">
+        <ID>http://queenbee.loni-lsu.teragrid.org/glue2/ExecutionEnvironment/NodeType1</ID>
+        <Name>NodeType1</Name>
+        <Extension Key="TeraGridPlatform">linux-rhel4-x86_64</Extension>
+        <Platform>x86_64</Platform>
+        <TotalInstances>664</TotalInstances>
+        <UsedInstances>30</UsedInstances>
+        <UnavailableInstances>634</UnavailableInstances>
+        <PhysicalCPUs>8</PhysicalCPUs>
+        <LogicalCPUs>8</LogicalCPUs>
+        <MainMemorySize>7981</MainMemorySize>
+        <VirtualMemorySize>24576</VirtualMemorySize>
+        <OSFamily>linux</OSFamily>
+        <OSName>linux</OSName>
+        <OSVersion>2.6.9-78.0.22.EL_lustre.1.6.7.2_loni</OSVersion>
+        <ComputingManager>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingManager/PBS</ComputingManager>
+      </ExecutionEnvironment>
+      <ExecutionEnvironment CreationTime="2011-10-04T10:15:03Z" Validity="300">
+        <ID>http://queenbee.loni-lsu.teragrid.org/glue2/ExecutionEnvironment/NodeType2</ID>
+        <Name>NodeType2</Name>
+        <Extension Key="TeraGridPlatform">linux-rhel4-x86_64</Extension>
+        <Platform>x86_64</Platform>
+        <TotalInstances>4</TotalInstances>
+        <UsedInstances>0</UsedInstances>
+        <UnavailableInstances>4</UnavailableInstances>
+        <PhysicalCPUs>8</PhysicalCPUs>
+        <LogicalCPUs>8</LogicalCPUs>
+        <OSFamily>linux</OSFamily>
+        <OSName>linux</OSName>
+        <OSVersion>2.6.9-78.0.22.EL_lustre.1.6.7.2_loni</OSVersion>
+        <ComputingManager>http://queenbee.loni-lsu.teragrid.org/glue2/ComputingManager/PBS</ComputingManager>
+      </ExecutionEnvironment>
+    </Entities>
+  </glue2>
