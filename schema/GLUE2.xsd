@@ -87,7 +87,7 @@
             <element name="OtherInfo" type="string" minOccurs="0" maxOccurs="unbounded"/>
             <element name="Extensions" type="glue:Extensions_t" minOccurs="0" maxOccurs="1"/>
         </sequence>
-        <attribute name="CreationTime" type="glue:DateTime_t"/>
+        <attribute name="CreationTime" type="dateTime"/>
         <attribute name="Validity" type="unsignedLong"/>
     </complexType>
 
@@ -220,12 +220,12 @@
                     <element name="HealthState" type="glue:EndpointHealthState_t" minOccurs="1" maxOccurs="1"/>
                     <element name="HealthStateInfo" type="string" minOccurs="0" maxOccurs="1"/>
                     <element name="ServingState" type="glue:ServingState_t" minOccurs="1" maxOccurs="1"/>
-                    <element name="StartTime" type="glue:DateTime_t" minOccurs="0" maxOccurs="1"/>
+                    <element name="StartTime" type="dateTime" minOccurs="0" maxOccurs="1"/>
                     <element name="IssuerCA" type="glue:DN_t" minOccurs="0" maxOccurs="1"/>
                     <element name="TrustedCA" type="glue:DN_t" minOccurs="0" maxOccurs="unbounded"/>
-                    <element name="DowntimeAnnounce" type="glue:DateTime_t" minOccurs="0" maxOccurs="1"/>
-                    <element name="DowntimeStart" type="glue:DateTime_t" minOccurs="0" maxOccurs="1"/>
-                    <element name="DowntimeEnd" type="glue:DateTime_t" minOccurs="0" maxOccurs="1"/>
+                    <element name="DowntimeAnnounce" type="dateTime" minOccurs="0" maxOccurs="1"/>
+                    <element name="DowntimeStart" type="dateTime" minOccurs="0" maxOccurs="1"/>
+                    <element name="DowntimeEnd" type="dateTime" minOccurs="0" maxOccurs="1"/>
                     <element name="DowntimeInfo" type="string" minOccurs="0" maxOccurs="1"/>
                     <element name="AccessPolicy" type="glue:AccessPolicy_t" minOccurs="0" maxOccurs="unbounded"/>
                 </sequence>
@@ -568,7 +568,7 @@
                     <element name="AppName" type="string" minOccurs="1" maxOccurs="1"/>
                     <element name="AppVersion" type="string" minOccurs="0" maxOccurs="1"/>
                     <element name="State" type="glue:AppEnvState_t" minOccurs="0" maxOccurs="1"/>
-                    <element name="RemovalDate" type="glue:DateTime_t" minOccurs="0" maxOccurs="1"/>
+                    <element name="RemovalDate" type="dateTime" minOccurs="0" maxOccurs="1"/>
                     <element name="License" type="glue:License_t" minOccurs="0" maxOccurs="1"/>
                     <element name="Description" type="string" minOccurs="0" maxOccurs="1"/>
                     <element name="BestBenchmark" type="glue:BenchmarkType_t" minOccurs="0" maxOccurs="unbounded"/>
@@ -633,13 +633,13 @@
                     <element name="UsedTotalWallTime" type="unsignedLong" minOccurs="0" maxOccurs="1"/>
                     <element name="UsedTotalCPUTime" type="unsignedLong" minOccurs="0" maxOccurs="1"/>
                     <element name="UsedMainMemory" type="unsignedLong" minOccurs="0" maxOccurs="1"/>
-                    <element name="SubmissionTime" type="glue:DateTime_t" minOccurs="0" maxOccurs="1"/>
-                    <element name="ComputingManagerSubmissionTime" type="glue:DateTime_t" minOccurs="0" maxOccurs="1"/>
-                    <element name="StartTime" type="glue:DateTime_t" minOccurs="0" maxOccurs="1"/>
-                    <element name="ComputingManagerEndTime" type="glue:DateTime_t" minOccurs="0" maxOccurs="1"/>
-                    <element name="EndTime" type="glue:DateTime_t" minOccurs="0" maxOccurs="1"/>
-                    <element name="WorkingAreaEraseTime" type="glue:DateTime_t" minOccurs="0" maxOccurs="1"/>
-                    <element name="ProxyExpirationTime" type="glue:DateTime_t" minOccurs="0" maxOccurs="1"/>
+                    <element name="SubmissionTime" type="dateTime" minOccurs="0" maxOccurs="1"/>
+                    <element name="ComputingManagerSubmissionTime" type="dateTime" minOccurs="0" maxOccurs="1"/>
+                    <element name="StartTime" type="dateTime" minOccurs="0" maxOccurs="1"/>
+                    <element name="ComputingManagerEndTime" type="dateTime" minOccurs="0" maxOccurs="1"/>
+                    <element name="EndTime" type="dateTime" minOccurs="0" maxOccurs="1"/>
+                    <element name="WorkingAreaEraseTime" type="dateTime" minOccurs="0" maxOccurs="1"/>
+                    <element name="ProxyExpirationTime" type="dateTime" minOccurs="0" maxOccurs="1"/>
                     <element name="SubmissionHost" type="string" minOccurs="0" maxOccurs="1"/>
                     <element name="SubmissionClientName" type="string" minOccurs="0" maxOccurs="1"/>
                     <element name="OtherMessages" type="string" minOccurs="0" maxOccurs="unbounded"/>
@@ -1194,12 +1194,6 @@
                     <enumeration value="tape"/>
                 </appinfo>
             </annotation>
-        </restriction>
-    </simpleType>
-
-    <simpleType name="DateTime_t">
-        <restriction base="xs:dateTime">
-            <pattern value="\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ"/>
         </restriction>
     </simpleType>
 
