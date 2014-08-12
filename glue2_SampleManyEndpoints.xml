@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <GLUE2
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns='http://schemas.ogf.org/glue/2009/03/spec_2.0_r1'
+    xsi:schemaLocation='http://schemas.ogf.org/glue/2009/03/spec_2.0_r1 glue2.xsd'>     
+    <ComputingService BaseType="Service">
+        <ID>computingService1</ID>
+        <Type></Type>
+        <QualityLevel>production</QualityLevel>
+        <Associations>
+            <EndpointID>computingEndpoint1</EndpointID> 
+        </Associations>
+    </ComputingService>  
+    <ComputingService BaseType="Service">
+        <ID>computingService1</ID>
+        <Type></Type>
+        <QualityLevel>production</QualityLevel>
+        <Associations>
+            <EndpointID>computingEndpoint1</EndpointID> 
+        </Associations>
+    </ComputingService>  
+    <ComputingService BaseType="Service">
+        <ID>computingService1</ID>
+        <Type></Type>
+        <QualityLevel>production</QualityLevel>
+        <Associations>
+            <EndpointID>computingEndpoint1</EndpointID> 
+        </Associations>
+    </ComputingService>  
+    <ComputingService BaseType="Service">
+        <ID>computingService1</ID>
+        <Type></Type>
+        <QualityLevel>production</QualityLevel>
+        <Associations>
+            <EndpointID>computingEndpoint1</EndpointID> 
+        </Associations>
+    </ComputingService>  
+    <ComputingService BaseType="Service">
+        <ID>computingService1</ID>
+        <Type></Type>
+        <QualityLevel>production</QualityLevel>
+        <Associations>
+            <EndpointID>computingEndpoint1</EndpointID> 
+        </Associations>
+    </ComputingService>  
+    <ComputingService BaseType="Service">
+        <ID>computingService1</ID>
+        <Type></Type>
+        <QualityLevel>production</QualityLevel>
+        <Associations>
+            <EndpointID>computingEndpoint1</EndpointID> 
+        </Associations>
+    </ComputingService>  
+    <StorageService BaseType="Service">
+        <ID>storageService1</ID>
+        <Type></Type>
+        <QualityLevel>production</QualityLevel>
+        <Associations>
+            <EndpointID>storageEndpoint1</EndpointID>    
+        </Associations>
+    </StorageService>   
+    
+    <Endpoint BaseType="Endpoint">
+        <ID>endpoint1</ID>
+        <Extensions>
+            <Extension>
+                <LocalID>Classification</LocalID>
+                <Key>Class</Key>
+                <Value>UNSCHEDULED</Value>
+            </Extension>
+            <Extension>
+                <LocalID>Severity</LocalID>
+                <Key>Severity</Key>
+                <Value>OUTAGE</Value>
+            </Extension>   
+        </Extensions>
+        <URL>uri://some.url.ac.uk/service</URL>
+        <InterfaceName></InterfaceName>
+        <QualityLevel>development</QualityLevel>
+        <HealthState>ok</HealthState>
+        <ServingState>production</ServingState>
+        <DowntimeAnnounce>2012-03-29T12:30:00Z</DowntimeAnnounce>
+        <DowntimeStart>2012-04-29T12:30:00Z</DowntimeStart>
+        <DowntimeEnd>2012-05-29T12:30:00Z</DowntimeEnd>
+        <DowntimeInfo>We had a power outage!</DowntimeInfo>
+        <Associations>
+            <ServiceID>service1</ServiceID>
+        </Associations>
+    </Endpoint> 
+
+
+    <ComputingEndpoint BaseType="Endpoint">
+        <ID>computingEndpoint1</ID>
+        <URL>uri://some.url.ac.uk/service</URL>
+        <InterfaceName></InterfaceName>
+        <QualityLevel>development</QualityLevel>
+        <HealthState>ok</HealthState>
+        <ServingState>production</ServingState>
+        <Associations>
+            <ServiceID>service2</ServiceID>
+        </Associations>
+    </ComputingEndpoint>   
+    <StorageEndpoint BaseType="Endpoint">
+        <ID>storageEndpoint1</ID>
+        <URL>uri://some.url.ac.uk/service</URL>
+        <InterfaceName></InterfaceName>
+        <QualityLevel>development</QualityLevel>
+        <HealthState>ok</HealthState>
+        <ServingState>production</ServingState>
+        <Associations>
+            <ServiceID>123</ServiceID>
+        </Associations>
+    </StorageEndpoint>    
+    <StorageEndpoint BaseType="Endpoint">
+        <ID>storageEndpoint1</ID>
+        <URL>uri://some.url.ac.uk/service</URL>
+        <InterfaceName></InterfaceName>
+        <QualityLevel>development</QualityLevel>
+        <HealthState>ok</HealthState>
+        <ServingState>production</ServingState>
+        <Associations>
+            <ServiceID>123</ServiceID>
+        </Associations>
+    </StorageEndpoint>    
+    <StorageEndpoint BaseType="Endpoint">
+        <ID>storageEndpoint1</ID>
+        <URL>uri://some.url.ac.uk/service</URL>
+        <InterfaceName></InterfaceName>
+        <QualityLevel>development</QualityLevel>
+        <HealthState>ok</HealthState>
+        <ServingState>production</ServingState>
+        <Associations>
+            <ServiceID>123</ServiceID>
+        </Associations>
+    </StorageEndpoint>          
+</GLUE2>

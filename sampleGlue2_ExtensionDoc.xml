@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sample document that imports the sample glue2 XSD in order 
+to define custom MonitoredXService and MonitoredXEndpoint specialisations. 
+
+The custom elements can be nested in the glue Glue element. This requires no 
+modification to the glue xsd, but this doc must be validated against both 
+the base glue2 xsd and the extending xsd. -->
+<GLUE2
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns:ext='http://www.gocdbextensions.ac.uk/sample'
+    xmlns='http://schemas.ogf.org/glue/2009/03/spec_2.0_r1'
+    xsi:schemaLocation='http://www.gocdbextensions.ac.uk/sample sampleGlue2_Extension.xsd
+    http://schemas.ogf.org/glue/2009/03/spec_2.0_r1 glue2.xsd'>
+        
+
+    <AdminDomain BaseType="Domain">
+        <ID>124</ID>
+        <Associations>
+            <ServiceID>urn:mymonitoredXservice</ServiceID>
+            <ServiceID>urn:mystandardService</ServiceID>
+        </Associations>
+    </AdminDomain> 
+         
+    <Service BaseType="Service">
+        <ID>urn:mystandardService</ID>
+        <Type>NormalService</Type>
+        <QualityLevel>production</QualityLevel>
+        <Associations>
+            <EndpointID>123</EndpointID>    
+        </Associations>
+    </Service>
+    
+    <!-- 
+    Our custom service type is substitutable for the AbstractService. 
+    We can therefore nest this type of service within the Glue element. 
+    This allows future glue profiles to define new services/endpoints without 
+    needing to modify the base Glue element. This doc does need to 
+    be validated against both the base glue2 xsd and the extending xsd.  
+    
+    For demonstration purposes, this service type nests its endpoint rather 
+    than referencing the endpont via an Association/EndpointID element. This 
+    explicitly ties the lifetime of the child endpoint to its parent service. 
+    The glue2 XSD gives flexiblity; future extension profiles can choose to adopt either 
+    the Associaions/element-ID-reference approach to model relationships, or the nested 
+    parent/child approach. 
+    -->
+    <ext:MonitoredXService BaseType="Service">
+        <ID>urn:mymonitoredXservice</ID>
+        <Type>ServiceX</Type>
+        <QualityLevel>production</QualityLevel>
+        <ext:Monitored>true</ext:Monitored>
+        <ext:Beta>true</ext:Beta>
+        <ext:MonitoredXEndpoint BaseType="Endpoint">
+            <ID>12</ID>
+            <URL>adf</URL>
+            <InterfaceName>adf</InterfaceName>
+            <QualityLevel>development</QualityLevel>
+            <HealthState>ok</HealthState>
+            <ServingState>production</ServingState>
+            <ext:DowntimeClassification>SCHEDULED</ext:DowntimeClassification>
+            <ext:DowntimeSeverity>OUTAGE</ext:DowntimeSeverity>
+        </ext:MonitoredXEndpoint>
+    </ext:MonitoredXService>
+    
+    
+    <Endpoint BaseType="Endpoint">
+        <ID>123</ID>
+        <URL>uri://some.url.ac.uk/service</URL>
+        <InterfaceName></InterfaceName>
+        <QualityLevel>development</QualityLevel>
+        <HealthState>ok</HealthState>
+        <ServingState>production</ServingState>
+        <Associations>
+            <ServiceID>urn:mystandardService</ServiceID>
+        </Associations>
+    </Endpoint>
+        
+</GLUE2>

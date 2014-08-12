@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:glue="http://schemas.ogf.org/glue/2009/03/spec_2.0_r1"
+           xmlns:ext="http://www.gocdbextensions.ac.uk/sample"
+           xmlns="http://www.gocdbextensions.ac.uk/sample"
+           targetNamespace="http://www.gocdbextensions.ac.uk/sample">
+               
+    <!-- This XSD imports the base glue2 XSD and extends AbstractService and
+    AbstractEndpoint in order to derive concrete Service and 
+    Endpoint specialisations. These elements introduce additional  
+    attributes for custom usage. By extending abstract elements, we can take 
+    advangage of strongly typed XSD validation rather than the loosly typed 
+    <Extensions> approach (an instance doc would have to be validated against 
+    both the base glue2 xsd and this xsd however). --> 
+    <xs:import namespace="http://schemas.ogf.org/glue/2009/03/spec_2.0_r1"
+                  schemaLocation="glue2.xsd"/> 
+               
+               
+    <!-- MonitoredXService must be the same as, or be derived from AbstractService. 
+    In this example we extend AbstractService to provide supplementary monitoring 
+    information and a custom Endpoint implementation. 
+    For demonstration purposes, the MonitoredXEndpoint is defined as a child of 
+    the service so that the lifetime of the chid endpoint is strictly tied to 
+    its parent service (rather than referencing the endpont via an Association/EndpointID element).
+    The glue2 XSD gives flexiblity; future extension profiles can choose to adopt either 
+    the Associaions/element-ID-reference approach to model relationships, or the nested 
+    parent/child approach.-->
+    <xs:element name="MonitoredXService" substitutionGroup="glue:AbstractService">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="glue:ServiceBase_t">
+                    <xs:sequence>
+                        <xs:element ref="ext:Monitored" minOccurs="1" maxOccurs="1"/>
+                        <xs:element ref="ext:Beta" minOccurs="1" maxOccurs="1"/>
+                        <xs:element ref="ext:MonitoredXEndpoint" minOccurs="1" maxOccurs="unbounded"/>
+                    </xs:sequence> 
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Monitored" type="glue:ExtendedBoolean_t" />
+    <xs:element name="Beta" type="glue:ExtendedBoolean_t" />
+    
+    <!-- MonitoredXEndpoint must be the same as, or be derived from AbstractEndpoint. 
+    It adds supplementary monitoring information. -->
+    <xs:element name="MonitoredXEndpoint" substitutionGroup="glue:AbstractEndpoint">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="glue:EndpointBase_t">
+                    <xs:sequence>
+                        <xs:element ref="ext:DowntimeClassification" minOccurs="1" maxOccurs="1"/>
+                        <xs:element ref="ext:DowntimeSeverity" minOccurs="1" maxOccurs="1"/>                   
+                    </xs:sequence> 
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+     
+    <!-- Our Downtimes require a classification, either SCHEDULED or UNSCHEDULED --> 
+    <xs:element name="DowntimeClassification" type="ext:DowntimeClassification_t"/>  
+    
+    <!-- Our Downtimes require a Severity, either OUTAGE or WARNING -->
+    <xs:element name="DowntimeSeverity" type="ext:DowntimeSeverity_t"/>
+        
+    <xs:simpleType name="DowntimeSeverity_t">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="OUTAGE"/>
+            <xs:enumeration value="WARNING"/>
+        </xs:restriction>
+    </xs:simpleType> 
+
+    <xs:simpleType name="DowntimeClassification_t">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SCHEDULED"/>
+            <xs:enumeration value="UNSCHEDULED"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<GLUE2
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns='http://schemas.ogf.org/glue/2009/03/spec_2.0_r1'
+    xsi:schemaLocation='http://schemas.ogf.org/glue/2009/03/spec_2.0_r1 ./glue2.xsd'>     
+    
+    <Location>
+        <ID>location1</ID>
+        <Associations>
+            <ServiceID>service1</ServiceID>
+        </Associations>
+    </Location>  
+    
+    <Contact>
+        <ID>urn:contact1</ID>
+        <Detail>http://some.uri/embedding/contact/info</Detail>
+        <Type>general</Type>
+        <Associations/>
+    </Contact>  
+     
+    <Contact>
+        <ID>contact2</ID>
+        <Detail>http://some.uri/embedding/contact/info2</Detail>
+        <Type>general</Type>
+        <Associations>
+            <ServiceID>service1</ServiceID>
+        </Associations>
+    </Contact> 
+    
+      
+    <UserDomain BaseType="Domain"> 
+        <ID>userdomain1</ID>
+        <Associations>
+            <PolicyID>123</PolicyID>
+            <PolicyID>1235</PolicyID>
+        </Associations>
+    </UserDomain>    
+    
+    <AdminDomain BaseType="Domain">
+        <ID>adminDomain1</ID>
+        <Name>NGI_UK</Name>
+        <Extensions>
+            <Extension>
+                <LocalID>SecurityEmail</LocalID>
+                <Key>SecurityEmail</Key>
+                <Value>UKNGI-Security@jiscmail.ac.uk</Value>
+            </Extension>
+        </Extensions>
+        <Description>United Kingdon NGI</Description>
+        <WWW>http://www.ukngi.ac.uk</WWW>
+        <Distributed>true</Distributed> 
+        <Associations>
+            <ServiceID>service3</ServiceID>
+            <ChildDomainID>adminDomain2</ChildDomainID>
+            <ContactID>contact1</ContactID>
+            <ContactID>contact2</ContactID>
+            <LocationID>location1</LocationID>
+        </Associations>
+    </AdminDomain>     
+    
+    <AdminDomain BaseType="Domain">
+        <ID>adminDomain2</ID>
+        <Name>GRID-LCG2</Name>
+        <Extensions>
+            <Extension>
+                <LocalID>ProductionInfrastructure</LocalID>
+                <Key>Target Infrastructure</Key>
+                <Value>Production</Value> 
+            </Extension>
+            <Extension>
+                <LocalID>CertificationStatus</LocalID>
+                <Key>Certification Status</Key>
+                <Value>Certified</Value> 
+            </Extension>
+        </Extensions>
+        <Description>Site Description</Description>
+        <WWW>http://www.some.service</WWW>
+        <Distributed>false</Distributed> 
+        <Associations>
+            <ServiceID>computingService1</ServiceID>
+            <ServiceID>storageService1</ServiceID>
+            <ParentDomainID>adminDomain1</ParentDomainID>
+            <ContactID>contact1</ContactID>
+            <ContactID>contact2</ContactID>
+            <LocationID>location1</LocationID>
+        </Associations>
+    </AdminDomain>   
+    
+    
+    
+    <Service BaseType="Service" CreationTime="2012-04-29T12:30:00Z">
+        <ID>service1</ID>
+        <Extensions>
+            <Extension>
+                <LocalID>HostDN</LocalID>
+                <Key>HostDN</Key>
+                <Value>/C=UK/O=eScience/OU=CLRC/L=RAL/CN=someHostDN</Value> 
+            </Extension>
+            <Extension>
+                <LocalID>Scope</LocalID>
+                <Key>Scope</Key>
+                <Value>EGI</Value> 
+            </Extension>   
+        </Extensions>
+        <Capability>executionmanagement.jobexecution</Capability>
+        <Type>CREAM-CE</Type>
+        <QualityLevel>production</QualityLevel>
+        <StatusInfo>http://creamce123.statusinfo.ac.uk/page</StatusInfo>
+        <Complexity>some extra info</Complexity>
+        <Associations>
+            <EndpointID>124</EndpointID>    
+        </Associations>
+    </Service>  
+    
+    <ComputingService BaseType="Service">
+        <ID>computingService1</ID>
+        <Type>org.glite.fts</Type>
+        <QualityLevel>production</QualityLevel>
+        <Associations>
+            <EndpointID>computingEndpoint1</EndpointID> 
+            <EndpointID>computingEndpoint3</EndpointID> 
+        </Associations>
+    </ComputingService>  
+    
+    
+    
+    <StorageService BaseType="Service">
+        <ID>storageService1</ID>
+        <Type></Type>
+        <QualityLevel>production</QualityLevel>
+        <Associations>
+            <EndpointID>storageEndpoint1</EndpointID>    
+        </Associations>
+    </StorageService>   
+    
+    <Endpoint BaseType="Endpoint">
+        <ID>endpoint1</ID>
+        <Name>someendpoint</Name>
+        <OtherInfo>something</OtherInfo>
+        <OtherInfo>something</OtherInfo>
+        <Extensions>
+            <Extension><LocalID>Classification</LocalID>
+                <Key>Class</Key>
+                <Value>UNSCHEDULED</Value></Extension>
+            <Extension><LocalID>Severity</LocalID>
+                <Key>Severity</Key>
+                <Value>OUTAGE</Value></Extension>   
+        </Extensions>
+        <URL>uri://some.url.ac.uk/service</URL>
+        <InterfaceName>xroot</InterfaceName>
+        <ImplementationName>xrootd</ImplementationName>
+        <QualityLevel>development</QualityLevel>
+        <HealthState>ok</HealthState>
+        <ServingState>production</ServingState>
+        <DowntimeAnnounce>2012-03-29T12:30:00Z</DowntimeAnnounce>
+        <DowntimeStart>2012-04-29T12:30:00Z</DowntimeStart>
+        <DowntimeEnd>2012-05-29T12:30:00Z</DowntimeEnd>
+        <DowntimeInfo>We had a power outage!</DowntimeInfo>
+        <Associations>
+            <ServiceID>service1</ServiceID>
+        </Associations>
+    </Endpoint> 
+    
+    <ComputingEndpoint BaseType="Endpoint">
+        <ID>computingEndpoint1</ID>
+        <URL>uri://some.url.ac.uk/service</URL>
+        <InterfaceName></InterfaceName>
+        <QualityLevel>development</QualityLevel>
+        <HealthState>ok</HealthState>
+        <ServingState>production</ServingState>
+        <Associations>
+            <ServiceID>service2</ServiceID>
+        </Associations>
+    </ComputingEndpoint>   
+    
+    <StorageEndpoint BaseType="Endpoint">
+        <ID>storageEndpoint1</ID>
+        <URL>uri://some.url.ac.uk/service</URL>
+        <InterfaceName></InterfaceName>
+        <QualityLevel>development</QualityLevel>
+        <HealthState>ok</HealthState>
+        <ServingState>production</ServingState>
+        <Associations>
+            <ServiceID>123</ServiceID>
+        </Associations>
+    </StorageEndpoint>    
+    
+    <ComputingShare BaseType="Share">
+        <ID>urn:mycomputingsshare1</ID>
+        <ServingState>production</ServingState>
+        <Associations>
+            <EndpointID>urn:myendpoint1</EndpointID>
+            <EndpointID>urn:myendpoint2</EndpointID>
+            <ResourceID>urn:myexenv1</ResourceID>
+            <ServiceID>urn:myservice1</ServiceID>
+        </Associations>
+    </ComputingShare>  
+    
+    
+    
+    <StorageShare BaseType="Share">
+        <ID>storageShare1</ID>
+        <ServingState>production</ServingState>
+        <SharingID>someid</SharingID>
+        <AccessLatency>online</AccessLatency>
+        <Associations>
+            <ServiceID>storageService1</ServiceID>
+        </Associations>
+    </StorageShare> 
+     
+    <ComputingManager BaseType="Manager">
+        <ID>computingManager1</ID>
+        <ProductName>adfadf</ProductName>
+        <Associations>
+            <ServiceID>computingService1</ServiceID>
+        </Associations>
+    </ComputingManager>  
+
+
+    <StorageManager BaseType="Manager">
+        <ID>storageManager1</ID>
+        <ProductName>adfadf</ProductName>
+        <Associations>
+            <ServiceID>storageService1</ServiceID>
+        </Associations>
+    </StorageManager>  
+    
+    <DataStore BaseType="Resource">
+        <ID>dataStore1</ID>
+        <Type>disk</Type>
+        <Latency>online</Latency>
+        <Associations>
+            <ManagerID>storageManager1</ManagerID>
+        </Associations>
+    </DataStore> 
+    
+    
+    <ExecutionEnvironment BaseType="Resource">
+        <ID>executionEnvironment1</ID>
+        <OtherInfo>This is a powerful GPU system</OtherInfo>
+        <Extensions>
+            <Extension>
+                <LocalID>GeForge</LocalID>
+                <Key>GeForge</Key>
+                <Value>GeForge 7</Value>
+            </Extension> 
+            <Extension>
+                <LocalID>CoreLib</LocalID>
+                <Key>CoreLib</Key>
+                <Value>glibc:3.4.9</Value>
+                <typ:TextInfo xmlns:typ="http://unigrids.org/2006/04/types">
+                    <typ:Name>StagingInPath</typ:Name>
+                    <typ:Value>/user-home/in</typ:Value>
+                </typ:TextInfo>
+            </Extension> 
+            <typ:TextInfo xmlns:typ="http://unigrids.org/2006/04/types">
+                <typ:Name>StagingInPath</typ:Name>
+                <typ:Value>/user-home/in</typ:Value>
+            </typ:TextInfo>
+            <typ:TextInfo xmlns:typ="http://unigrids.org/2006/04/types">
+                <typ:Name>StagingOutPath</typ:Name>
+                <typ:Value>/user-home/out</typ:Value>
+            </typ:TextInfo>   
+        </Extensions> 
+
+        <Platform>linux</Platform>
+        <MainMemorySize>123</MainMemorySize>
+        <OSFamily></OSFamily>
+        <ConnectivityIn>true</ConnectivityIn>
+        <ConnectivityOut>true</ConnectivityOut>
+        <Associations>
+            <ManagerID>computingManager1</ManagerID>
+        </Associations>
+    </ExecutionEnvironment>  
+    
+        
+    <Activity BaseType="Activity">
+        <ID>http://activity1.ac.uk/1</ID>
+        <Associations/>
+    </Activity>
+    <ComputingActivity BaseType="Activity">
+        <ID>computingActivity1</ID>
+        <State>some state</State>
+        <Owner>someone</Owner>
+        <Associations/>
+    </ComputingActivity>
+    <AccessPolicy BaseType="Policy">
+        <ID>accessPolicy1</ID>
+        <Scheme></Scheme>
+        <Rule></Rule>
+        <Associations>
+            <EndpointID>endoint1</EndpointID>
+            <DomainID>userDomain1</DomainID>
+        </Associations>
+    </AccessPolicy>    
+    <MappingPolicy BaseType="Policy">
+        <ID>mappingPolicy1</ID>
+        <Scheme></Scheme>
+        <Rule></Rule>
+        <Associations>
+            <ShareID>share1</ShareID>
+            <DomainID>userDomain1</DomainID>
+        </Associations>
+    </MappingPolicy>  
+    <typ:TextInfo xmlns:typ="http://unigrids.org/2006/04/types">
+      <typ:Name>StagingOutPath</typ:Name>
+      <typ:Value>/user-home/out</typ:Value>
+    </typ:TextInfo>  
+</GLUE2>
